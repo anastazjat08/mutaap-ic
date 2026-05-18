@@ -1,1 +1,1 @@
-# mutaap-check
+**MutAAP-IC** (_Mutational Amino Acid Position Impact Check_ )
