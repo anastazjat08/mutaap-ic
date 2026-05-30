@@ -1,0 +1,19 @@
+name: mutaap_env
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.10
+  - pytest
+
+  # Structural bioinformatics
+  - foldseek
+  - tmalign
+  - biopython
+
+  # General Python packages
+  - pandas
+  - requests
+  - pip

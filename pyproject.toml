@@ -1,0 +1,21 @@
+[project]
+name = "mutaapic"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Anastazja", email = "anastazjat08@gmail.com" }
+]
+
+dependencies = [
+    "pandas",
+    "requests",
+    "biopython",
+]
+[tool.setuptools.packages.find]
+include = ["mutaapic*"]
+exclude = ["images*", "tests*", "examples*"]
+
+[project.scripts]
+mutaap = "mutaapic.cli:main"
