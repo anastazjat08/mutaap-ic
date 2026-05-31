@@ -40,7 +40,7 @@ def download_pdb_structures(pdb_ids: list, out_folder: str):
 
     return results
 
-def download_alfaphold_structures(af_ids: list, out_folder: str):
+def download_af_structures(af_ids: list, out_folder: str):
     '''Downloads AlphaFold PDB files for a list of AlphaFold IDs and saves them to a specified folder.
     Parameters
     ----------

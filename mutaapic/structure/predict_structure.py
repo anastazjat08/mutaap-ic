@@ -24,15 +24,17 @@ def predictESM(version: str, sequence: str, out_dir: str) -> str:
 
             if response.status_code == 200:
                 print("Successfully predicted structure. Saving to file...")
+                # ensure output directory exists
+                os.makedirs(out_dir, exist_ok=True)
                 file_path = os.path.join(out_dir, f"{version}_esmfold_v1.pdb")
-                with open(file_path, "w") as f:
+                with open(file_path, "w", encoding="utf-8") as f:
                     f.write(response.text)
                 return file_path
 
             else:
                 print(f"[Attempt {attempt}] API error {response.status_code}: {response.text}")
 
-                # 504 = timeout on server side → retry
+                # 504 = timeout on server side, so retry
                 if response.status_code == 504:
                     time.sleep(5)
                     continue

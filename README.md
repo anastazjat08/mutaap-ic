@@ -41,7 +41,7 @@ pip install .
 This installs the CLI command:
 `mutaap`
 
-### Step 4 - Test he installatio
+### Step 4 - Test he installation
 
 ```
 mutaap --help
