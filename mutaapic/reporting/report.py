@@ -119,6 +119,28 @@ def generate_report(out_dir: str,
     orig_link = _copy_to_report(orig_pdb)
     mut_link = _copy_to_report(mut_pdb)
 
+    # Read PDB text to embed in the HTML so the report works under file://
+    def _read_text_for(path, link):
+        # Prefer original path; fall back to copied file in report dir
+        if path and os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as fh:
+                    return fh.read()
+            except Exception:
+                pass
+        if link:
+            p = os.path.join(report_dir, link)
+            if os.path.exists(p):
+                try:
+                    with open(p, 'r', encoding='utf-8') as fh:
+                        return fh.read()
+                except Exception:
+                    pass
+        return None
+
+    orig_txt = _read_text_for(orig_pdb, orig_link)
+    mut_txt = _read_text_for(mut_pdb, mut_link)
+
     parts = []
     
     parts.append("<html><head><meta charset='utf-8'><title>MutAAP-IC Report</title>")
@@ -191,13 +213,14 @@ def generate_report(out_dir: str,
                 "</div>")
     parts.append("<style>body{font-family:Arial,Helvetica,sans-serif;padding:18px}h1,h2{color:#2b2b2b}table.dataframe{border-collapse:collapse;width:100%}table.dataframe th, table.dataframe td{border:1px solid #ddd;padding:8px;text-align:left}tr:nth-child(even){background:#f9f9f9}"
                 "#structure_viewer canvas{position:absolute;top:0;left:0}""</style>")
+    # Embed PDB directly into the generated HTML so the page works when opened via file:// without requiring fetch/XHR.
     script = (
-        "<script>var origFile=" + json.dumps(orig_link) + ";var mutFile=" + json.dumps(mut_link) + ";"
+        "<script>var origTxt=" + (json.dumps(orig_txt) if orig_txt is not None else "null") + ";"
+        "var mutTxt=" + (json.dumps(mut_txt) if mut_txt is not None else "null") + ";"
         "function loadModels(){"
-        "if(!origFile && !mutFile){document.getElementById('structure_viewer').innerHTML='<p style=\"padding:8px\">No structures available</p>';return;}"
+        "if(!origTxt && !mutTxt){document.getElementById('structure_viewer').innerHTML='<p style=\"padding:8px\">No structures available</p>';return;}"
         "var doLoad=function(){var v=$3Dmol.createViewer('structure_viewer',{defaultcolors:$3Dmol.rasmolElementColors});"
-        "Promise.all([origFile?fetch(origFile).then(r=>r.text()):Promise.resolve(null), mutFile?fetch(mutFile).then(r=>r.text()):Promise.resolve(null)])"
-        ".then(([origTxt,mutTxt])=>{var idx=0; if(origTxt){v.addModel(origTxt,'pdb'); v.setStyle({model:idx},{cartoon:{color:'blue'}}); idx++;} if(mutTxt){v.addModel(mutTxt,'pdb'); v.setStyle({model:idx},{cartoon:{color:'red',opacity:0.8}}); idx++;} v.zoomTo(); v.render();}).catch(e=>{document.getElementById('structure_viewer').innerHTML='<p style=\"padding:8px\">Failed to load structures</p>';}); };"
+        "Promise.resolve([origTxt,mutTxt]).then(([origModel,mutModel])=>{var idx=0; if(origModel){v.addModel(origModel,'pdb'); v.setStyle({model:idx},{cartoon:{color:'blue'}}); idx++;} if(mutModel){v.addModel(mutModel,'pdb'); v.setStyle({model:idx},{cartoon:{color:'red',opacity:0.8}}); idx++;} v.zoomTo(); v.render();}).catch(e=>{document.getElementById('structure_viewer').innerHTML='<p style=\"padding:8px\">Failed to load structures</p>';}); };"
         "if(typeof $3Dmol==='undefined'){var s=document.createElement('script');s.src='https://3dmol.csb.pitt.edu/build/3Dmol-min.js';s.onload=doLoad;document.head.appendChild(s);}else{doLoad();}"
         "}"
         "loadModels();"
