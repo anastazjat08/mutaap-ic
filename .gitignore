@@ -1,0 +1,12 @@
+# Ignore Python bytecode caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyc
+
+# Ignore build / packaging artifacts
+*.egg-info/
+
+# Ignore local result and database folders
+mutaap_results/
+mutaap_db/
