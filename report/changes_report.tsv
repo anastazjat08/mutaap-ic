@@ -1,0 +1,3965 @@
+aa_position	original_aa	modified_aa	mutation_type
+
+SUMMARY
+Original protein length:	1315
+modified_protein_length:	1315
+same_length	True
+length_status	shorter
+frameshift	False
+internal_stop	False
+functional	True
+protein_too_short	False
+1	M	V	nonsynonymous
+2	P	I	nonsynonymous
+3	I	T	nonsynonymous
+4	T	I	nonsynonymous
+5	I	N	nonsynonymous
+7	N	F	nonsynonymous
+8	F	R	nonsynonymous
+9	R	Y	nonsynonymous
+10	Y	S	nonsynonymous
+11	S	D	nonsynonymous
+12	D	P	nonsynonymous
+13	P	V	nonsynonymous
+14	V	N	nonsynonymous
+16	N	D	nonsynonymous
+17	D	T	nonsynonymous
+18	T	I	nonsynonymous
+20	I	M	nonsynonymous
+22	M	E	nonsynonymous
+23	E	P	nonsynonymous
+25	P	Y	nonsynonymous
+26	Y	C	nonsynonymous
+27	C	K	nonsynonymous
+28	K	G	nonsynonymous
+29	G	L	nonsynonymous
+30	L	D	nonsynonymous
+31	D	I	nonsynonymous
+32	I	Y	nonsynonymous
+34	Y	K	nonsynonymous
+35	K	A	nonsynonymous
+36	A	F	nonsynonymous
+37	F	K	nonsynonymous
+38	K	I	nonsynonymous
+39	I	T	nonsynonymous
+40	T	D	nonsynonymous
+41	D	R	nonsynonymous
+42	R	I	nonsynonymous
+43	I	W	nonsynonymous
+44	W	I	nonsynonymous
+45	I	V	nonsynonymous
+46	V	P	nonsynonymous
+47	P	E	nonsynonymous
+48	E	R	nonsynonymous
+49	R	Y	nonsynonymous
+50	Y	E	nonsynonymous
+51	E	F	nonsynonymous
+52	F	G	nonsynonymous
+53	G	T	nonsynonymous
+54	T	K	nonsynonymous
+55	K	P	nonsynonymous
+56	P	E	nonsynonymous
+57	E	D	nonsynonymous
+58	D	F	nonsynonymous
+59	F	N	nonsynonymous
+60	N	P	nonsynonymous
+62	P	S	nonsynonymous
+64	S	L	nonsynonymous
+65	L	I	nonsynonymous
+66	I	E	nonsynonymous
+67	E	G	nonsynonymous
+68	G	A	nonsynonymous
+69	A	S	nonsynonymous
+70	S	E	nonsynonymous
+71	E	Y	nonsynonymous
+73	Y	D	nonsynonymous
+74	D	P	nonsynonymous
+75	P	N	nonsynonymous
+76	N	Y	nonsynonymous
+77	Y	L	nonsynonymous
+78	L	R	nonsynonymous
+79	R	T	nonsynonymous
+80	T	D	nonsynonymous
+81	D	S	nonsynonymous
+82	S	D	nonsynonymous
+83	D	K	nonsynonymous
+84	K	D	nonsynonymous
+85	D	R	nonsynonymous
+86	R	F	nonsynonymous
+87	F	L	nonsynonymous
+88	L	Q	nonsynonymous
+89	Q	T	nonsynonymous
+90	T	M	nonsynonymous
+91	M	V	nonsynonymous
+92	V	K	nonsynonymous
+93	K	L	nonsynonymous
+94	L	F	nonsynonymous
+95	F	N	nonsynonymous
+96	N	R	nonsynonymous
+97	R	I	nonsynonymous
+98	I	K	nonsynonymous
+99	K	N	nonsynonymous
+101	N	V	nonsynonymous
+102	V	A	nonsynonymous
+103	A	G	nonsynonymous
+104	G	E	nonsynonymous
+105	E	A	nonsynonymous
+106	A	L	nonsynonymous
+108	L	D	nonsynonymous
+109	D	K	nonsynonymous
+110	K	I	nonsynonymous
+112	I	N	nonsynonymous
+113	N	A	nonsynonymous
+114	A	I	nonsynonymous
+115	I	P	nonsynonymous
+116	P	Y	nonsynonymous
+117	Y	L	nonsynonymous
+118	L	G	nonsynonymous
+119	G	N	nonsynonymous
+120	N	S	nonsynonymous
+121	S	Y	nonsynonymous
+122	Y	S	nonsynonymous
+123	S	L	nonsynonymous
+125	L	D	nonsynonymous
+126	D	K	nonsynonymous
+127	K	F	nonsynonymous
+128	F	D	nonsynonymous
+129	D	T	nonsynonymous
+130	T	N	nonsynonymous
+131	N	S	nonsynonymous
+132	S	N	nonsynonymous
+133	N	S	nonsynonymous
+134	S	V	nonsynonymous
+135	V	S	nonsynonymous
+136	S	F	nonsynonymous
+137	F	N	nonsynonymous
+138	N	L	nonsynonymous
+140	L	E	nonsynonymous
+141	E	Q	nonsynonymous
+142	Q	D	nonsynonymous
+143	D	P	nonsynonymous
+144	P	S	nonsynonymous
+145	S	G	nonsynonymous
+146	G	A	nonsynonymous
+147	A	T	nonsynonymous
+149	T	K	nonsynonymous
+150	K	S	nonsynonymous
+151	S	A	nonsynonymous
+152	A	M	nonsynonymous
+153	M	L	nonsynonymous
+154	L	T	nonsynonymous
+155	T	N	nonsynonymous
+156	N	L	nonsynonymous
+157	L	I	nonsynonymous
+159	I	F	nonsynonymous
+160	F	G	nonsynonymous
+161	G	P	nonsynonymous
+162	P	G	nonsynonymous
+163	G	P	nonsynonymous
+164	P	V	nonsynonymous
+165	V	L	nonsynonymous
+166	L	N	nonsynonymous
+167	N	K	nonsynonymous
+168	K	N	nonsynonymous
+169	N	E	nonsynonymous
+170	E	V	nonsynonymous
+171	V	R	nonsynonymous
+172	R	G	nonsynonymous
+173	G	I	nonsynonymous
+174	I	V	nonsynonymous
+175	V	L	nonsynonymous
+176	L	R	nonsynonymous
+177	R	V	nonsynonymous
+178	V	D	nonsynonymous
+179	D	N	nonsynonymous
+180	N	K	nonsynonymous
+181	K	N	nonsynonymous
+182	N	Y	nonsynonymous
+183	Y	F	nonsynonymous
+184	F	P	nonsynonymous
+185	P	C	nonsynonymous
+186	C	R	nonsynonymous
+187	R	D	nonsynonymous
+188	D	G	nonsynonymous
+189	G	F	nonsynonymous
+190	F	G	nonsynonymous
+191	G	S	nonsynonymous
+192	S	I	nonsynonymous
+193	I	M	nonsynonymous
+194	M	Q	nonsynonymous
+195	Q	M	nonsynonymous
+196	M	A	nonsynonymous
+197	A	F	nonsynonymous
+198	F	C	nonsynonymous
+199	C	P	nonsynonymous
+200	P	E	nonsynonymous
+201	E	Y	nonsynonymous
+202	Y	V	nonsynonymous
+203	V	P	nonsynonymous
+204	P	T	nonsynonymous
+205	T	F	nonsynonymous
+206	F	D	nonsynonymous
+207	D	N	nonsynonymous
+208	N	V	nonsynonymous
+209	V	I	nonsynonymous
+210	I	E	nonsynonymous
+211	E	N	nonsynonymous
+212	N	I	nonsynonymous
+213	I	T	nonsynonymous
+214	T	S	nonsynonymous
+215	S	L	nonsynonymous
+216	L	T	nonsynonymous
+217	T	I	nonsynonymous
+218	I	G	nonsynonymous
+219	G	K	nonsynonymous
+220	K	S	nonsynonymous
+221	S	K	nonsynonymous
+222	K	Y	nonsynonymous
+223	Y	F	nonsynonymous
+224	F	Q	nonsynonymous
+225	Q	D	nonsynonymous
+226	D	P	nonsynonymous
+227	P	A	nonsynonymous
+228	A	L	nonsynonymous
+231	L	M	nonsynonymous
+232	M	H	nonsynonymous
+233	H	E	nonsynonymous
+234	E	L	nonsynonymous
+235	L	I	nonsynonymous
+236	I	H	nonsynonymous
+237	H	V	nonsynonymous
+238	V	L	nonsynonymous
+239	L	H	nonsynonymous
+240	H	G	nonsynonymous
+241	G	L	nonsynonymous
+242	L	Y	nonsynonymous
+243	Y	G	nonsynonymous
+244	G	M	nonsynonymous
+245	M	Q	nonsynonymous
+246	Q	V	nonsynonymous
+247	V	S	nonsynonymous
+249	S	H	nonsynonymous
+250	H	E	nonsynonymous
+251	E	I	nonsynonymous
+253	I	P	nonsynonymous
+254	P	S	nonsynonymous
+255	S	K	nonsynonymous
+256	K	Q	nonsynonymous
+257	Q	E	nonsynonymous
+258	E	I	nonsynonymous
+259	I	Y	nonsynonymous
+260	Y	M	nonsynonymous
+261	M	Q	nonsynonymous
+262	Q	H	nonsynonymous
+263	H	T	nonsynonymous
+264	T	Y	nonsynonymous
+265	Y	P	nonsynonymous
+266	P	I	nonsynonymous
+267	I	S	nonsynonymous
+268	S	A	nonsynonymous
+269	A	E	nonsynonymous
+271	E	L	nonsynonymous
+272	L	F	nonsynonymous
+273	F	T	nonsynonymous
+274	T	F	nonsynonymous
+275	F	G	nonsynonymous
+277	G	Q	nonsynonymous
+278	Q	D	nonsynonymous
+279	D	A	nonsynonymous
+280	A	N	nonsynonymous
+281	N	L	nonsynonymous
+282	L	I	nonsynonymous
+283	I	S	nonsynonymous
+284	S	I	nonsynonymous
+285	I	D	nonsynonymous
+286	D	I	nonsynonymous
+287	I	K	nonsynonymous
+288	K	N	nonsynonymous
+289	N	D	nonsynonymous
+290	D	L	nonsynonymous
+291	L	Y	nonsynonymous
+292	Y	E	nonsynonymous
+293	E	K	nonsynonymous
+294	K	T	nonsynonymous
+295	T	L	nonsynonymous
+296	L	N	nonsynonymous
+297	N	D	nonsynonymous
+298	D	Y	nonsynonymous
+299	Y	K	nonsynonymous
+300	K	A	nonsynonymous
+301	A	I	nonsynonymous
+302	I	A	nonsynonymous
+303	A	N	nonsynonymous
+304	N	K	nonsynonymous
+305	K	L	nonsynonymous
+306	L	S	nonsynonymous
+307	S	Q	nonsynonymous
+308	Q	V	nonsynonymous
+309	V	T	nonsynonymous
+310	T	S	nonsynonymous
+311	S	C	nonsynonymous
+312	C	N	nonsynonymous
+313	N	D	nonsynonymous
+314	D	P	nonsynonymous
+315	P	N	nonsynonymous
+316	N	I	nonsynonymous
+317	I	D	nonsynonymous
+318	D	I	nonsynonymous
+319	I	D	nonsynonymous
+320	D	S	nonsynonymous
+321	S	Y	nonsynonymous
+322	Y	K	nonsynonymous
+323	K	Q	nonsynonymous
+324	Q	I	nonsynonymous
+325	I	Y	nonsynonymous
+326	Y	Q	nonsynonymous
+328	Q	K	nonsynonymous
+329	K	Y	nonsynonymous
+330	Y	Q	nonsynonymous
+331	Q	F	nonsynonymous
+332	F	D	nonsynonymous
+333	D	K	nonsynonymous
+334	K	D	nonsynonymous
+335	D	S	nonsynonymous
+336	S	N	nonsynonymous
+337	N	G	nonsynonymous
+338	G	Q	nonsynonymous
+339	Q	Y	nonsynonymous
+340	Y	I	nonsynonymous
+341	I	V	nonsynonymous
+342	V	N	nonsynonymous
+343	N	E	nonsynonymous
+344	E	D	nonsynonymous
+345	D	K	nonsynonymous
+346	K	F	nonsynonymous
+347	F	Q	nonsynonymous
+348	Q	I	nonsynonymous
+349	I	L	nonsynonymous
+350	L	Y	nonsynonymous
+351	Y	N	nonsynonymous
+352	N	S	nonsynonymous
+353	S	I	nonsynonymous
+354	I	M	nonsynonymous
+355	M	Y	nonsynonymous
+356	Y	G	nonsynonymous
+357	G	F	nonsynonymous
+358	F	T	nonsynonymous
+359	T	E	nonsynonymous
+360	E	I	nonsynonymous
+361	I	E	nonsynonymous
+362	E	L	nonsynonymous
+363	L	G	nonsynonymous
+364	G	K	nonsynonymous
+366	K	F	nonsynonymous
+367	F	N	nonsynonymous
+368	N	I	nonsynonymous
+369	I	K	nonsynonymous
+370	K	T	nonsynonymous
+371	T	R	nonsynonymous
+372	R	L	nonsynonymous
+373	L	S	nonsynonymous
+374	S	Y	nonsynonymous
+375	Y	F	nonsynonymous
+376	F	S	nonsynonymous
+377	S	M	nonsynonymous
+378	M	N	nonsynonymous
+379	N	H	nonsynonymous
+380	H	D	nonsynonymous
+381	D	P	nonsynonymous
+382	P	V	nonsynonymous
+383	V	K	nonsynonymous
+384	K	I	nonsynonymous
+385	I	P	nonsynonymous
+386	P	N	nonsynonymous
+387	N	L	nonsynonymous
+389	L	D	nonsynonymous
+391	D	T	nonsynonymous
+392	T	I	nonsynonymous
+393	I	Y	nonsynonymous
+394	Y	N	nonsynonymous
+395	N	D	nonsynonymous
+396	D	T	nonsynonymous
+397	T	E	nonsynonymous
+398	E	G	nonsynonymous
+399	G	F	nonsynonymous
+400	F	N	nonsynonymous
+401	N	I	nonsynonymous
+402	I	E	nonsynonymous
+403	E	S	nonsynonymous
+404	S	K	nonsynonymous
+405	K	D	nonsynonymous
+406	D	L	nonsynonymous
+407	L	K	nonsynonymous
+408	K	S	nonsynonymous
+409	S	E	nonsynonymous
+410	E	Y	nonsynonymous
+411	Y	K	nonsynonymous
+412	K	G	nonsynonymous
+413	G	Q	nonsynonymous
+414	Q	N	nonsynonymous
+415	N	M	nonsynonymous
+416	M	R	nonsynonymous
+417	R	V	nonsynonymous
+418	V	N	nonsynonymous
+419	N	T	nonsynonymous
+420	T	N	nonsynonymous
+421	N	A	nonsynonymous
+422	A	F	nonsynonymous
+423	F	R	nonsynonymous
+424	R	N	nonsynonymous
+425	N	V	nonsynonymous
+426	V	D	nonsynonymous
+427	D	G	nonsynonymous
+428	G	S	nonsynonymous
+429	S	G	nonsynonymous
+430	G	L	nonsynonymous
+431	L	V	nonsynonymous
+432	V	S	nonsynonymous
+433	S	K	nonsynonymous
+434	K	L	nonsynonymous
+435	L	I	nonsynonymous
+436	I	G	nonsynonymous
+437	G	L	nonsynonymous
+438	L	C	nonsynonymous
+439	C	K	nonsynonymous
+441	K	I	nonsynonymous
+443	I	P	nonsynonymous
+445	P	T	nonsynonymous
+446	T	N	nonsynonymous
+447	N	I	nonsynonymous
+448	I	R	nonsynonymous
+449	R	E	nonsynonymous
+450	E	N	nonsynonymous
+451	N	L	nonsynonymous
+452	L	Y	nonsynonymous
+453	Y	N	nonsynonymous
+454	N	R	nonsynonymous
+455	R	T	nonsynonymous
+456	T	A	nonsynonymous
+457	A	S	nonsynonymous
+458	S	L	nonsynonymous
+459	L	T	nonsynonymous
+460	T	D	nonsynonymous
+461	D	L	nonsynonymous
+462	L	G	nonsynonymous
+464	G	E	nonsynonymous
+465	E	L	nonsynonymous
+466	L	C	nonsynonymous
+467	C	I	nonsynonymous
+468	I	K	nonsynonymous
+469	K	I	nonsynonymous
+470	I	K	nonsynonymous
+471	K	N	nonsynonymous
+472	N	E	nonsynonymous
+473	E	D	nonsynonymous
+474	D	L	nonsynonymous
+475	L	T	nonsynonymous
+476	T	F	nonsynonymous
+477	F	I	nonsynonymous
+478	I	A	nonsynonymous
+479	A	E	nonsynonymous
+480	E	K	nonsynonymous
+481	K	N	nonsynonymous
+482	N	S	nonsynonymous
+483	S	F	nonsynonymous
+484	F	S	nonsynonymous
+485	S	E	nonsynonymous
+487	E	P	nonsynonymous
+488	P	F	nonsynonymous
+489	F	Q	nonsynonymous
+490	Q	D	nonsynonymous
+491	D	E	nonsynonymous
+492	E	I	nonsynonymous
+493	I	V	nonsynonymous
+494	V	S	nonsynonymous
+495	S	Y	nonsynonymous
+496	Y	N	nonsynonymous
+497	N	T	nonsynonymous
+498	T	K	nonsynonymous
+499	K	N	nonsynonymous
+500	N	K	nonsynonymous
+501	K	P	nonsynonymous
+502	P	L	nonsynonymous
+503	L	N	nonsynonymous
+504	N	F	nonsynonymous
+505	F	N	nonsynonymous
+506	N	Y	nonsynonymous
+507	Y	S	nonsynonymous
+508	S	L	nonsynonymous
+509	L	D	nonsynonymous
+510	D	K	nonsynonymous
+511	K	I	nonsynonymous
+513	I	V	nonsynonymous
+514	V	D	nonsynonymous
+515	D	Y	nonsynonymous
+516	Y	N	nonsynonymous
+517	N	L	nonsynonymous
+518	L	Q	nonsynonymous
+519	Q	S	nonsynonymous
+520	S	K	nonsynonymous
+521	K	I	nonsynonymous
+522	I	T	nonsynonymous
+523	T	L	nonsynonymous
+524	L	P	nonsynonymous
+525	P	N	nonsynonymous
+526	N	D	nonsynonymous
+527	D	R	nonsynonymous
+528	R	T	nonsynonymous
+530	T	P	nonsynonymous
+531	P	V	nonsynonymous
+532	V	T	nonsynonymous
+533	T	K	nonsynonymous
+534	K	G	nonsynonymous
+535	G	I	nonsynonymous
+536	I	P	nonsynonymous
+537	P	Y	nonsynonymous
+538	Y	A	nonsynonymous
+539	A	P	nonsynonymous
+540	P	E	nonsynonymous
+541	E	Y	nonsynonymous
+542	Y	K	nonsynonymous
+543	K	S	nonsynonymous
+544	S	N	nonsynonymous
+545	N	A	nonsynonymous
+547	A	S	nonsynonymous
+548	S	T	nonsynonymous
+549	T	I	nonsynonymous
+550	I	E	nonsynonymous
+551	E	I	nonsynonymous
+552	I	H	nonsynonymous
+553	H	N	nonsynonymous
+554	N	I	nonsynonymous
+555	I	D	nonsynonymous
+557	D	N	nonsynonymous
+558	N	T	nonsynonymous
+559	T	I	nonsynonymous
+560	I	Y	nonsynonymous
+561	Y	Q	nonsynonymous
+562	Q	Y	nonsynonymous
+563	Y	L	nonsynonymous
+564	L	Y	nonsynonymous
+565	Y	A	nonsynonymous
+566	A	Q	nonsynonymous
+567	Q	K	nonsynonymous
+568	K	S	nonsynonymous
+569	S	P	nonsynonymous
+570	P	T	nonsynonymous
+572	T	L	nonsynonymous
+573	L	Q	nonsynonymous
+574	Q	R	nonsynonymous
+575	R	I	nonsynonymous
+576	I	T	nonsynonymous
+577	T	M	nonsynonymous
+578	M	T	nonsynonymous
+579	T	N	nonsynonymous
+580	N	S	nonsynonymous
+581	S	V	nonsynonymous
+582	V	D	nonsynonymous
+584	D	A	nonsynonymous
+585	A	L	nonsynonymous
+586	L	I	nonsynonymous
+587	I	N	nonsynonymous
+588	N	S	nonsynonymous
+589	S	T	nonsynonymous
+590	T	K	nonsynonymous
+591	K	I	nonsynonymous
+592	I	Y	nonsynonymous
+593	Y	S	nonsynonymous
+594	S	Y	nonsynonymous
+595	Y	F	nonsynonymous
+596	F	P	nonsynonymous
+597	P	S	nonsynonymous
+598	S	V	nonsynonymous
+599	V	I	nonsynonymous
+600	I	S	nonsynonymous
+601	S	K	nonsynonymous
+602	K	V	nonsynonymous
+603	V	N	nonsynonymous
+604	N	Q	nonsynonymous
+605	Q	G	nonsynonymous
+606	G	A	nonsynonymous
+607	A	Q	nonsynonymous
+608	Q	G	nonsynonymous
+609	G	I	nonsynonymous
+610	I	L	nonsynonymous
+611	L	F	nonsynonymous
+612	F	L	nonsynonymous
+613	L	Q	nonsynonymous
+614	Q	W	nonsynonymous
+615	W	V	nonsynonymous
+616	V	R	nonsynonymous
+617	R	D	nonsynonymous
+618	D	I	nonsynonymous
+620	I	D	nonsynonymous
+622	D	F	nonsynonymous
+623	F	T	nonsynonymous
+624	T	N	nonsynonymous
+625	N	E	nonsynonymous
+626	E	S	nonsynonymous
+628	S	Q	nonsynonymous
+629	Q	K	nonsynonymous
+630	K	T	nonsynonymous
+632	T	I	nonsynonymous
+633	I	D	nonsynonymous
+634	D	K	nonsynonymous
+635	K	I	nonsynonymous
+636	I	S	nonsynonymous
+637	S	D	nonsynonymous
+638	D	V	nonsynonymous
+639	V	S	nonsynonymous
+640	S	T	nonsynonymous
+641	T	I	nonsynonymous
+642	I	V	nonsynonymous
+643	V	P	nonsynonymous
+644	P	Y	nonsynonymous
+645	Y	I	nonsynonymous
+646	I	G	nonsynonymous
+647	G	P	nonsynonymous
+648	P	A	nonsynonymous
+649	A	L	nonsynonymous
+650	L	N	nonsynonymous
+651	N	I	nonsynonymous
+652	I	V	nonsynonymous
+653	V	K	nonsynonymous
+654	K	Q	nonsynonymous
+655	Q	G	nonsynonymous
+656	G	Y	nonsynonymous
+657	Y	E	nonsynonymous
+658	E	G	nonsynonymous
+659	G	N	nonsynonymous
+660	N	F	nonsynonymous
+661	F	I	nonsynonymous
+662	I	G	nonsynonymous
+663	G	A	nonsynonymous
+664	A	L	nonsynonymous
+665	L	E	nonsynonymous
+666	E	T	nonsynonymous
+668	T	G	nonsynonymous
+669	G	V	nonsynonymous
+671	V	L	nonsynonymous
+674	L	E	nonsynonymous
+675	E	Y	nonsynonymous
+676	Y	I	nonsynonymous
+677	I	P	nonsynonymous
+678	P	E	nonsynonymous
+679	E	I	nonsynonymous
+680	I	T	nonsynonymous
+681	T	L	nonsynonymous
+682	L	P	nonsynonymous
+683	P	V	nonsynonymous
+684	V	I	nonsynonymous
+685	I	A	nonsynonymous
+687	A	L	nonsynonymous
+688	L	S	nonsynonymous
+689	S	I	nonsynonymous
+690	I	A	nonsynonymous
+691	A	E	nonsynonymous
+692	E	S	nonsynonymous
+694	S	T	nonsynonymous
+695	T	Q	nonsynonymous
+696	Q	K	nonsynonymous
+697	K	E	nonsynonymous
+698	E	K	nonsynonymous
+699	K	I	nonsynonymous
+701	I	K	nonsynonymous
+702	K	T	nonsynonymous
+703	T	I	nonsynonymous
+704	I	D	nonsynonymous
+705	D	N	nonsynonymous
+706	N	F	nonsynonymous
+707	F	L	nonsynonymous
+708	L	E	nonsynonymous
+709	E	K	nonsynonymous
+710	K	R	nonsynonymous
+711	R	Y	nonsynonymous
+712	Y	E	nonsynonymous
+713	E	K	nonsynonymous
+714	K	W	nonsynonymous
+715	W	I	nonsynonymous
+716	I	E	nonsynonymous
+717	E	V	nonsynonymous
+718	V	Y	nonsynonymous
+719	Y	K	nonsynonymous
+720	K	L	nonsynonymous
+721	L	V	nonsynonymous
+722	V	K	nonsynonymous
+723	K	A	nonsynonymous
+724	A	K	nonsynonymous
+725	K	W	nonsynonymous
+726	W	L	nonsynonymous
+727	L	G	nonsynonymous
+728	G	T	nonsynonymous
+729	T	V	nonsynonymous
+730	V	N	nonsynonymous
+731	N	T	nonsynonymous
+732	T	Q	nonsynonymous
+733	Q	F	nonsynonymous
+734	F	Q	nonsynonymous
+735	Q	K	nonsynonymous
+736	K	R	nonsynonymous
+737	R	S	nonsynonymous
+738	S	Y	nonsynonymous
+739	Y	Q	nonsynonymous
+740	Q	M	nonsynonymous
+741	M	Y	nonsynonymous
+742	Y	R	nonsynonymous
+743	R	S	nonsynonymous
+744	S	L	nonsynonymous
+745	L	E	nonsynonymous
+746	E	Y	nonsynonymous
+747	Y	Q	nonsynonymous
+748	Q	V	nonsynonymous
+749	V	D	nonsynonymous
+750	D	A	nonsynonymous
+751	A	I	nonsynonymous
+752	I	K	nonsynonymous
+754	K	I	nonsynonymous
+756	I	D	nonsynonymous
+757	D	Y	nonsynonymous
+758	Y	E	nonsynonymous
+759	E	Y	nonsynonymous
+760	Y	K	nonsynonymous
+761	K	I	nonsynonymous
+762	I	Y	nonsynonymous
+763	Y	S	nonsynonymous
+764	S	G	nonsynonymous
+765	G	P	nonsynonymous
+766	P	D	nonsynonymous
+767	D	K	nonsynonymous
+768	K	E	nonsynonymous
+769	E	Q	nonsynonymous
+770	Q	I	nonsynonymous
+771	I	A	nonsynonymous
+772	A	D	nonsynonymous
+773	D	E	nonsynonymous
+774	E	I	nonsynonymous
+775	I	N	nonsynonymous
+777	N	L	nonsynonymous
+778	L	K	nonsynonymous
+779	K	N	nonsynonymous
+780	N	K	nonsynonymous
+781	K	L	nonsynonymous
+782	L	E	nonsynonymous
+784	E	K	nonsynonymous
+785	K	A	nonsynonymous
+786	A	N	nonsynonymous
+787	N	K	nonsynonymous
+788	K	A	nonsynonymous
+789	A	M	nonsynonymous
+790	M	I	nonsynonymous
+791	I	N	nonsynonymous
+792	N	I	nonsynonymous
+793	I	N	nonsynonymous
+794	N	I	nonsynonymous
+795	I	F	nonsynonymous
+796	F	M	nonsynonymous
+797	M	R	nonsynonymous
+798	R	E	nonsynonymous
+799	E	S	nonsynonymous
+801	S	R	nonsynonymous
+802	R	S	nonsynonymous
+803	S	F	nonsynonymous
+804	F	L	nonsynonymous
+805	L	V	nonsynonymous
+806	V	N	nonsynonymous
+807	N	Q	nonsynonymous
+808	Q	M	nonsynonymous
+809	M	I	nonsynonymous
+810	I	N	nonsynonymous
+811	N	E	nonsynonymous
+812	E	A	nonsynonymous
+813	A	K	nonsynonymous
+815	K	Q	nonsynonymous
+816	Q	L	nonsynonymous
+818	L	E	nonsynonymous
+819	E	F	nonsynonymous
+820	F	D	nonsynonymous
+821	D	T	nonsynonymous
+822	T	Q	nonsynonymous
+823	Q	S	nonsynonymous
+824	S	K	nonsynonymous
+825	K	N	nonsynonymous
+826	N	I	nonsynonymous
+827	I	L	nonsynonymous
+828	L	M	nonsynonymous
+829	M	Q	nonsynonymous
+830	Q	Y	nonsynonymous
+831	Y	I	nonsynonymous
+832	I	K	nonsynonymous
+833	K	A	nonsynonymous
+834	A	N	nonsynonymous
+835	N	S	nonsynonymous
+836	S	K	nonsynonymous
+837	K	F	nonsynonymous
+838	F	I	nonsynonymous
+839	I	G	nonsynonymous
+840	G	I	nonsynonymous
+841	I	T	nonsynonymous
+842	T	E	nonsynonymous
+843	E	L	nonsynonymous
+844	L	K	nonsynonymous
+846	K	L	nonsynonymous
+847	L	E	nonsynonymous
+848	E	S	nonsynonymous
+849	S	K	nonsynonymous
+850	K	I	nonsynonymous
+851	I	N	nonsynonymous
+852	N	K	nonsynonymous
+853	K	V	nonsynonymous
+854	V	F	nonsynonymous
+855	F	S	nonsynonymous
+856	S	T	nonsynonymous
+857	T	P	nonsynonymous
+858	P	I	nonsynonymous
+859	I	P	nonsynonymous
+860	P	F	nonsynonymous
+861	F	S	nonsynonymous
+862	S	Y	nonsynonymous
+863	Y	S	nonsynonymous
+864	S	K	nonsynonymous
+865	K	N	nonsynonymous
+866	N	L	nonsynonymous
+867	L	D	nonsynonymous
+868	D	C	nonsynonymous
+869	C	W	nonsynonymous
+870	W	V	nonsynonymous
+871	V	D	nonsynonymous
+872	D	N	nonsynonymous
+873	N	E	nonsynonymous
+875	E	D	nonsynonymous
+876	D	I	nonsynonymous
+877	I	D	nonsynonymous
+878	D	V	nonsynonymous
+879	V	I	nonsynonymous
+880	I	L	nonsynonymous
+881	L	K	nonsynonymous
+883	K	S	nonsynonymous
+884	S	T	nonsynonymous
+885	T	I	nonsynonymous
+886	I	L	nonsynonymous
+887	L	N	nonsynonymous
+888	N	L	nonsynonymous
+889	L	D	nonsynonymous
+890	D	I	nonsynonymous
+891	I	N	nonsynonymous
+893	N	D	nonsynonymous
+894	D	I	nonsynonymous
+896	I	S	nonsynonymous
+897	S	D	nonsynonymous
+898	D	I	nonsynonymous
+899	I	S	nonsynonymous
+900	S	G	nonsynonymous
+901	G	F	nonsynonymous
+902	F	N	nonsynonymous
+903	N	S	nonsynonymous
+905	S	V	nonsynonymous
+906	V	I	nonsynonymous
+907	I	T	nonsynonymous
+908	T	Y	nonsynonymous
+909	Y	P	nonsynonymous
+910	P	D	nonsynonymous
+911	D	A	nonsynonymous
+912	A	Q	nonsynonymous
+913	Q	L	nonsynonymous
+914	L	V	nonsynonymous
+915	V	P	nonsynonymous
+916	P	G	nonsynonymous
+917	G	I	nonsynonymous
+918	I	N	nonsynonymous
+919	N	G	nonsynonymous
+920	G	K	nonsynonymous
+921	K	A	nonsynonymous
+922	A	I	nonsynonymous
+923	I	H	nonsynonymous
+924	H	L	nonsynonymous
+925	L	V	nonsynonymous
+926	V	N	nonsynonymous
+928	N	E	nonsynonymous
+929	E	S	nonsynonymous
+931	S	E	nonsynonymous
+932	E	V	nonsynonymous
+933	V	I	nonsynonymous
+934	I	V	nonsynonymous
+935	V	H	nonsynonymous
+936	H	K	nonsynonymous
+937	K	A	nonsynonymous
+938	A	M	nonsynonymous
+939	M	D	nonsynonymous
+940	D	I	nonsynonymous
+941	I	E	nonsynonymous
+942	E	Y	nonsynonymous
+943	Y	N	nonsynonymous
+944	N	D	nonsynonymous
+945	D	M	nonsynonymous
+946	M	F	nonsynonymous
+947	F	N	nonsynonymous
+949	N	F	nonsynonymous
+950	F	T	nonsynonymous
+951	T	V	nonsynonymous
+952	V	S	nonsynonymous
+953	S	F	nonsynonymous
+954	F	W	nonsynonymous
+955	W	L	nonsynonymous
+956	L	R	nonsynonymous
+957	R	V	nonsynonymous
+958	V	P	nonsynonymous
+959	P	K	nonsynonymous
+960	K	V	nonsynonymous
+961	V	S	nonsynonymous
+962	S	A	nonsynonymous
+963	A	S	nonsynonymous
+964	S	H	nonsynonymous
+965	H	L	nonsynonymous
+966	L	E	nonsynonymous
+967	E	Q	nonsynonymous
+968	Q	Y	nonsynonymous
+969	Y	G	nonsynonymous
+970	G	T	nonsynonymous
+971	T	N	nonsynonymous
+972	N	E	nonsynonymous
+973	E	Y	nonsynonymous
+974	Y	S	nonsynonymous
+975	S	I	nonsynonymous
+977	I	S	nonsynonymous
+979	S	M	nonsynonymous
+980	M	K	nonsynonymous
+982	K	H	nonsynonymous
+983	H	S	nonsynonymous
+984	S	L	nonsynonymous
+985	L	S	nonsynonymous
+986	S	I	nonsynonymous
+987	I	G	nonsynonymous
+988	G	S	nonsynonymous
+989	S	G	nonsynonymous
+990	G	W	nonsynonymous
+991	W	S	nonsynonymous
+992	S	V	nonsynonymous
+993	V	S	nonsynonymous
+994	S	L	nonsynonymous
+995	L	K	nonsynonymous
+996	K	G	nonsynonymous
+997	G	N	nonsynonymous
+999	N	L	nonsynonymous
+1000	L	I	nonsynonymous
+1001	I	W	nonsynonymous
+1002	W	T	nonsynonymous
+1003	T	L	nonsynonymous
+1004	L	K	nonsynonymous
+1005	K	D	nonsynonymous
+1006	D	S	nonsynonymous
+1007	S	A	nonsynonymous
+1008	A	G	nonsynonymous
+1009	G	E	nonsynonymous
+1010	E	V	nonsynonymous
+1011	V	R	nonsynonymous
+1012	R	Q	nonsynonymous
+1013	Q	I	nonsynonymous
+1014	I	T	nonsynonymous
+1015	T	F	nonsynonymous
+1016	F	R	nonsynonymous
+1017	R	D	nonsynonymous
+1018	D	L	nonsynonymous
+1019	L	P	nonsynonymous
+1020	P	D	nonsynonymous
+1021	D	K	nonsynonymous
+1022	K	F	nonsynonymous
+1023	F	N	nonsynonymous
+1024	N	A	nonsynonymous
+1025	A	Y	nonsynonymous
+1026	Y	L	nonsynonymous
+1027	L	A	nonsynonymous
+1028	A	N	nonsynonymous
+1029	N	K	nonsynonymous
+1030	K	W	nonsynonymous
+1031	W	V	nonsynonymous
+1032	V	F	nonsynonymous
+1033	F	I	nonsynonymous
+1034	I	T	nonsynonymous
+1035	T	I	nonsynonymous
+1036	I	T	nonsynonymous
+1037	T	N	nonsynonymous
+1038	N	D	nonsynonymous
+1039	D	R	nonsynonymous
+1040	R	L	nonsynonymous
+1041	L	S	nonsynonymous
+1043	S	A	nonsynonymous
+1044	A	N	nonsynonymous
+1045	N	L	nonsynonymous
+1046	L	Y	nonsynonymous
+1047	Y	I	nonsynonymous
+1048	I	N	nonsynonymous
+1049	N	G	nonsynonymous
+1050	G	V	nonsynonymous
+1051	V	L	nonsynonymous
+1052	L	M	nonsynonymous
+1053	M	G	nonsynonymous
+1054	G	S	nonsynonymous
+1055	S	A	nonsynonymous
+1056	A	E	nonsynonymous
+1057	E	I	nonsynonymous
+1058	I	T	nonsynonymous
+1059	T	G	nonsynonymous
+1060	G	L	nonsynonymous
+1061	L	G	nonsynonymous
+1062	G	A	nonsynonymous
+1063	A	I	nonsynonymous
+1064	I	R	nonsynonymous
+1065	R	E	nonsynonymous
+1066	E	D	nonsynonymous
+1067	D	N	nonsynonymous
+1069	N	I	nonsynonymous
+1070	I	T	nonsynonymous
+1071	T	L	nonsynonymous
+1072	L	K	nonsynonymous
+1073	K	L	nonsynonymous
+1074	L	D	nonsynonymous
+1075	D	R	nonsynonymous
+1076	R	C	nonsynonymous
+1077	C	N	nonsynonymous
+1081	N	Q	nonsynonymous
+1082	Q	Y	nonsynonymous
+1083	Y	V	nonsynonymous
+1084	V	S	nonsynonymous
+1085	S	I	nonsynonymous
+1086	I	D	nonsynonymous
+1087	D	K	nonsynonymous
+1088	K	F	nonsynonymous
+1089	F	R	nonsynonymous
+1090	R	I	nonsynonymous
+1091	I	F	nonsynonymous
+1092	F	C	nonsynonymous
+1093	C	K	nonsynonymous
+1094	K	A	nonsynonymous
+1095	A	L	nonsynonymous
+1096	L	N	nonsynonymous
+1097	N	P	nonsynonymous
+1098	P	K	nonsynonymous
+1099	K	E	nonsynonymous
+1100	E	I	nonsynonymous
+1101	I	E	nonsynonymous
+1102	E	K	nonsynonymous
+1103	K	L	nonsynonymous
+1104	L	Y	nonsynonymous
+1105	Y	T	nonsynonymous
+1106	T	S	nonsynonymous
+1107	S	Y	nonsynonymous
+1108	Y	L	nonsynonymous
+1109	L	S	nonsynonymous
+1110	S	I	nonsynonymous
+1111	I	T	nonsynonymous
+1112	T	F	nonsynonymous
+1113	F	L	nonsynonymous
+1114	L	R	nonsynonymous
+1115	R	D	nonsynonymous
+1116	D	F	nonsynonymous
+1117	F	W	nonsynonymous
+1118	W	G	nonsynonymous
+1119	G	N	nonsynonymous
+1120	N	P	nonsynonymous
+1121	P	L	nonsynonymous
+1122	L	R	nonsynonymous
+1123	R	Y	nonsynonymous
+1124	Y	D	nonsynonymous
+1125	D	T	nonsynonymous
+1126	T	E	nonsynonymous
+1127	E	Y	nonsynonymous
+1129	Y	L	nonsynonymous
+1130	L	I	nonsynonymous
+1131	I	P	nonsynonymous
+1132	P	V	nonsynonymous
+1133	V	A	nonsynonymous
+1134	A	S	nonsynonymous
+1137	S	K	nonsynonymous
+1138	K	D	nonsynonymous
+1139	D	V	nonsynonymous
+1140	V	Q	nonsynonymous
+1141	Q	L	nonsynonymous
+1142	L	K	nonsynonymous
+1143	K	N	nonsynonymous
+1144	N	I	nonsynonymous
+1145	I	T	nonsynonymous
+1146	T	D	nonsynonymous
+1147	D	Y	nonsynonymous
+1148	Y	M	nonsynonymous
+1149	M	Y	nonsynonymous
+1150	Y	L	nonsynonymous
+1151	L	T	nonsynonymous
+1152	T	N	nonsynonymous
+1153	N	A	nonsynonymous
+1154	A	P	nonsynonymous
+1155	P	S	nonsynonymous
+1156	S	Y	nonsynonymous
+1157	Y	T	nonsynonymous
+1158	T	N	nonsynonymous
+1159	N	G	nonsynonymous
+1160	G	K	nonsynonymous
+1161	K	L	nonsynonymous
+1162	L	N	nonsynonymous
+1163	N	I	nonsynonymous
+1164	I	Y	nonsynonymous
+1166	Y	R	nonsynonymous
+1168	R	L	nonsynonymous
+1169	L	Y	nonsynonymous
+1170	Y	N	nonsynonymous
+1171	N	G	nonsynonymous
+1172	G	L	nonsynonymous
+1173	L	K	nonsynonymous
+1174	K	F	nonsynonymous
+1175	F	I	nonsynonymous
+1177	I	K	nonsynonymous
+1178	K	R	nonsynonymous
+1179	R	Y	nonsynonymous
+1180	Y	T	nonsynonymous
+1181	T	P	nonsynonymous
+1182	P	N	nonsynonymous
+1184	N	E	nonsynonymous
+1185	E	I	nonsynonymous
+1186	I	D	nonsynonymous
+1187	D	S	nonsynonymous
+1188	S	F	nonsynonymous
+1189	F	V	nonsynonymous
+1190	V	K	nonsynonymous
+1191	K	S	nonsynonymous
+1192	S	G	nonsynonymous
+1193	G	D	nonsynonymous
+1194	D	F	nonsynonymous
+1195	F	I	nonsynonymous
+1196	I	K	nonsynonymous
+1197	K	L	nonsynonymous
+1198	L	Y	nonsynonymous
+1199	Y	V	nonsynonymous
+1200	V	S	nonsynonymous
+1201	S	Y	nonsynonymous
+1202	Y	N	nonsynonymous
+1205	N	E	nonsynonymous
+1206	E	H	nonsynonymous
+1207	H	I	nonsynonymous
+1208	I	V	nonsynonymous
+1209	V	G	nonsynonymous
+1210	G	Y	nonsynonymous
+1211	Y	P	nonsynonymous
+1212	P	K	nonsynonymous
+1213	K	D	nonsynonymous
+1214	D	G	nonsynonymous
+1215	G	N	nonsynonymous
+1216	N	A	nonsynonymous
+1217	A	F	nonsynonymous
+1218	F	N	nonsynonymous
+1220	N	L	nonsynonymous
+1221	L	D	nonsynonymous
+1222	D	R	nonsynonymous
+1223	R	I	nonsynonymous
+1224	I	L	nonsynonymous
+1225	L	R	nonsynonymous
+1226	R	V	nonsynonymous
+1227	V	G	nonsynonymous
+1228	G	Y	nonsynonymous
+1229	Y	N	nonsynonymous
+1230	N	A	nonsynonymous
+1231	A	P	nonsynonymous
+1232	P	G	nonsynonymous
+1233	G	I	nonsynonymous
+1234	I	P	nonsynonymous
+1235	P	L	nonsynonymous
+1236	L	Y	nonsynonymous
+1237	Y	K	nonsynonymous
+1239	K	M	nonsynonymous
+1240	M	E	nonsynonymous
+1241	E	A	nonsynonymous
+1242	A	V	nonsynonymous
+1243	V	K	nonsynonymous
+1244	K	L	nonsynonymous
+1245	L	R	nonsynonymous
+1246	R	D	nonsynonymous
+1247	D	L	nonsynonymous
+1248	L	K	nonsynonymous
+1249	K	T	nonsynonymous
+1250	T	Y	nonsynonymous
+1251	Y	S	nonsynonymous
+1252	S	V	nonsynonymous
+1253	V	Q	nonsynonymous
+1254	Q	L	nonsynonymous
+1255	L	K	nonsynonymous
+1256	K	L	nonsynonymous
+1257	L	Y	nonsynonymous
+1258	Y	D	nonsynonymous
+1260	D	K	nonsynonymous
+1261	K	N	nonsynonymous
+1262	N	A	nonsynonymous
+1263	A	S	nonsynonymous
+1264	S	L	nonsynonymous
+1265	L	G	nonsynonymous
+1266	G	L	nonsynonymous
+1267	L	V	nonsynonymous
+1268	V	G	nonsynonymous
+1269	G	T	nonsynonymous
+1270	T	H	nonsynonymous
+1271	H	N	nonsynonymous
+1272	N	G	nonsynonymous
+1273	G	Q	nonsynonymous
+1274	Q	I	nonsynonymous
+1275	I	G	nonsynonymous
+1276	G	N	nonsynonymous
+1277	N	D	nonsynonymous
+1278	D	P	nonsynonymous
+1279	P	N	nonsynonymous
+1280	N	R	nonsynonymous
+1281	R	D	nonsynonymous
+1282	D	I	nonsynonymous
+1283	I	L	nonsynonymous
+1284	L	I	nonsynonymous
+1285	I	A	nonsynonymous
+1286	A	S	nonsynonymous
+1287	S	N	nonsynonymous
+1288	N	W	nonsynonymous
+1289	W	Y	nonsynonymous
+1290	Y	F	nonsynonymous
+1291	F	N	nonsynonymous
+1292	N	H	nonsynonymous
+1293	H	L	nonsynonymous
+1294	L	K	nonsynonymous
+1295	K	D	nonsynonymous
+1296	D	K	nonsynonymous
+1297	K	I	nonsynonymous
+1298	I	L	nonsynonymous
+1299	L	G	nonsynonymous
+1300	G	C	nonsynonymous
+1301	C	D	nonsynonymous
+1302	D	W	nonsynonymous
+1303	W	Y	nonsynonymous
+1304	Y	F	nonsynonymous
+1305	F	V	nonsynonymous
+1306	V	P	nonsynonymous
+1307	P	T	nonsynonymous
+1308	T	D	nonsynonymous
+1309	D	E	nonsynonymous
+1310	E	G	nonsynonymous
+1311	G	W	nonsynonymous
+1312	W	T	nonsynonymous
+1313	T	N	nonsynonymous
+1314	N	D	nonsynonymous
+1315	D	*	stop_gained
+
+NUCLEOTIDE_CHANGES
+position	original_nt	modified_nt
+1	A	G
+4	C	A
+5	C	T
+8	T	C
+9	A	C
+11	C	T
+12	C	A
+14	T	A
+15	A	T
+19	A	T
+20	A	T
+22	T	A
+23	T	G
+24	T	A
+25	A	T
+26	G	A
+27	A	T
+28	T	A
+29	A	G
+31	A	G
+32	G	A
+34	G	C
+35	A	C
+37	C	G
+38	C	T
+40	G	A
+41	T	A
+46	A	G
+49	G	A
+50	A	C
+51	T	A
+53	C	T
+54	A	T
+60	T	G
+64	A	G
+65	T	A
+67	G	C
+68	A	C
+69	G	A
+73	C	T
+74	C	A
+75	A	C
+77	A	G
+78	C	T
+79	T	A
+80	G	A
+81	T	G
+82	A	G
+83	A	G
+84	G	T
+85	G	C
+86	G	T
+87	T	A
+88	C	G
+89	T	A
+90	A	T
+91	G	A
+92	A	T
+93	T	C
+94	A	T
+95	T	A
+96	C	T
+100	T	A
+102	T	G
+103	A	G
+104	A	C
+105	G	T
+106	G	T
+107	C	T
+108	T	C
+109	T	A
+110	T	A
+111	C	A
+113	A	T
+116	T	C
+118	A	G
+119	C	A
+120	A	T
+121	G	C
+122	A	G
+124	C	A
+125	G	T
+127	A	T
+128	T	G
+129	T	G
+130	T	A
+131	G	T
+132	G	A
+133	A	G
+135	A	G
+136	G	C
+137	T	C
+139	C	G
+140	C	A
+141	G	A
+142	G	A
+143	A	G
+144	A	G
+145	A	T
+146	G	A
+147	G	T
+148	T	G
+150	T	A
+151	G	T
+152	A	T
+153	A	T
+154	T	G
+155	T	G
+156	T	G
+157	G	A
+158	G	C
+159	G	A
+161	C	A
+163	A	C
+164	A	C
+165	A	T
+166	C	G
+167	C	A
+168	T	A
+171	A	T
+172	G	T
+173	A	T
+175	T	A
+176	T	A
+177	T	C
+178	A	C
+179	A	C
+180	C	A
+184	C	T
+186	A	T
+189	T	A
+191	C	T
+193	T	A
+196	A	G
+197	T	A
+200	A	G
+201	A	T
+203	G	C
+204	T	A
+205	G	T
+207	A	T
+208	T	G
+209	C	A
+210	T	G
+211	G	T
+213	G	T
+216	T	C
+217	T	G
+219	C	T
+220	G	C
+221	A	C
+222	T	A
+223	C	A
+224	C	A
+225	A	T
+226	A	T
+230	A	T
+231	T	A
+232	T	A
+233	T	G
+234	A	G
+236	G	C
+237	G	T
+238	A	G
+239	C	A
+241	G	T
+242	A	C
+244	T	G
+245	C	A
+247	G	A
+249	T	A
+250	A	G
+252	A	T
+253	G	A
+254	A	G
+255	T	A
+256	A	T
+257	G	T
+258	A	T
+261	T	A
+262	T	C
+263	T	A
+265	C	A
+266	A	C
+267	A	C
+269	C	T
+270	C	G
+271	A	G
+273	G	A
+274	G	A
+275	T	A
+277	A	C
+278	A	T
+279	A	G
+280	C	T
+282	G	T
+283	T	A
+284	T	A
+285	T	C
+287	A	G
+288	C	A
+290	G	T
+291	A	T
+293	T	A
+294	T	A
+297	A	C
+300	C	T
+301	A	G
+302	A	T
+303	T	A
+305	T	C
+308	C	G
+309	A	T
+311	G	A
+312	T	A
+314	A	C
+315	A	C
+316	G	T
+317	C	T
+318	C	A
+322	T	G
+323	T	A
+324	A	T
+325	G	A
+327	T	G
+329	A	T
+330	G	A
+335	T	A
+336	A	T
+337	A	G
+338	A	C
+339	T	C
+340	G	A
+341	C	T
+342	C	A
+343	A	C
+344	T	C
+345	A	T
+346	C	T
+347	C	A
+348	T	C
+349	T	C
+350	A	T
+351	C	T
+352	C	G
+353	T	G
+354	T	A
+355	G	A
+356	G	A
+357	A	T
+358	A	T
+359	A	C
+360	T	A
+362	C	A
+363	A	T
+365	A	C
+366	T	C
+368	C	T
+369	C	A
+370	T	C
+373	C	G
+374	T	A
+375	A	C
+376	G	A
+378	C	G
+379	A	T
+380	A	T
+381	G	T
+382	T	G
+383	T	A
+385	G	A
+386	A	C
+387	T	A
+389	C	A
+390	A	C
+391	A	T
+392	A	C
+393	C	T
+394	T	A
+395	C	A
+397	A	T
+398	A	C
+399	T	A
+400	T	G
+401	C	T
+403	G	T
+404	T	C
+405	A	T
+407	C	T
+409	T	A
+410	T	A
+412	A	T
+413	A	T
+414	T	A
+418	T	G
+419	T	A
+421	G	C
+424	C	G
+426	A	C
+427	G	C
+428	A	C
+430	C	A
+431	C	G
+432	C	T
+433	A	G
+435	T	A
+437	G	C
+439	G	A
+441	A	T
+444	T	A
+446	C	A
+448	A	T
+449	A	C
+451	T	G
+454	G	A
+455	C	T
+456	A	G
+457	A	C
+460	C	A
+461	T	C
+462	G	A
+464	C	A
+465	A	T
+466	A	T
+467	A	T
+468	T	A
+469	T	A
+475	A	T
+477	A	T
+478	T	G
+479	T	G
+480	T	A
+481	G	C
+482	G	C
+483	A	T
+484	C	G
+485	C	G
+486	T	G
+487	G	C
+488	G	C
+489	G	T
+490	C	G
+491	C	T
+493	G	T
+495	T	A
+496	T	A
+497	T	A
+498	A	T
+501	T	A
+504	A	T
+505	A	G
+507	T	G
+509	A	T
+510	G	T
+511	G	A
+512	T	G
+513	T	A
+514	A	G
+516	A	T
+517	G	A
+518	G	T
+520	A	G
+522	T	A
+523	G	T
+525	A	G
+526	T	A
+527	T	G
+529	A	G
+530	G	T
+531	G	A
+533	T	A
+534	A	T
+535	G	A
+540	T	A
+543	A	T
+544	A	T
+546	T	C
+548	A	T
+550	T	C
+551	T	C
+552	C	A
+553	C	T
+554	C	G
+555	A	T
+556	T	A
+558	T	A
+559	A	G
+560	G	A
+561	A	T
+563	A	G
+565	G	T
+566	G	T
+568	T	G
+569	T	G
+570	T	C
+571	G	T
+572	G	C
+573	C	A
+574	T	A
+575	C	T
+579	A	G
+580	A	C
+581	T	A
+582	G	A
+583	C	A
+584	A	T
+585	A	G
+586	A	G
+587	T	C
+588	G	A
+589	G	T
+590	C	T
+591	A	T
+593	T	G
+594	T	C
+595	T	C
+596	G	C
+597	C	A
+598	C	G
+599	C	A
+601	G	T
+603	A	T
+604	T	G
+605	A	T
+606	T	A
+607	G	C
+608	T	C
+609	A	T
+610	C	A
+612	T	C
+613	A	T
+614	C	T
+615	C	T
+616	T	G
+617	T	A
+619	G	A
+622	A	G
+623	A	T
+624	T	A
+625	G	A
+628	A	G
+629	T	A
+631	G	A
+633	A	T
+635	A	T
+638	T	C
+639	T	G
+640	A	T
+642	G	A
+643	T	C
+644	C	T
+645	A	C
+646	C	A
+647	T	C
+648	C	T
+650	C	T
+652	A	G
+653	T	G
+654	T	C
+655	G	A
+656	G	A
+657	C	A
+659	A	G
+660	A	C
+662	G	A
+663	C	A
+664	A	T
+666	A	T
+668	A	T
+670	T	C
+671	T	A
+672	T	A
+673	C	G
+675	A	T
+676	G	C
+677	A	C
+678	T	A
+679	C	G
+682	G	T
+683	C	T
+685	T	C
+688	C	T
+691	T	A
+693	A	G
+694	A	C
+695	T	A
+696	G	C
+697	C	G
+699	C	A
+700	G	C
+701	A	T
+702	A	T
+703	C	A
+705	T	A
+706	A	C
+707	T	A
+708	A	T
+709	C	G
+710	A	T
+711	T	A
+712	G	C
+716	T	A
+717	A	T
+718	C	G
+719	A	G
+721	G	T
+722	G	T
+723	T	A
+725	T	A
+726	A	C
+727	T	G
+728	A	G
+729	C	A
+730	G	A
+731	G	T
+732	A	G
+733	A	C
+734	T	A
+736	C	G
+737	A	T
+738	G	A
+739	G	T
+740	T	C
+742	T	A
+743	C	G
+744	A	C
+745	A	C
+746	G	A
+747	C	T
+748	C	G
+750	T	A
+751	G	A
+752	A	T
+753	A	T
+757	A	C
+758	T	C
+759	T	A
+760	C	T
+762	A	C
+763	T	A
+764	C	A
+765	C	A
+766	A	C
+769	C	G
+772	G	A
+773	A	T
+774	A	T
+775	A	T
+776	T	A
+778	T	A
+779	A	T
+780	T	G
+781	A	C
+782	T	A
+786	G	T
+787	C	A
+788	A	C
+789	T	A
+790	A	T
+791	C	A
+792	A	T
+793	T	C
+794	A	C
+795	T	A
+796	C	A
+797	C	T
+800	T	G
+801	A	T
+802	A	G
+803	G	C
+806	C	A
+807	T	A
+811	G	C
+812	A	T
+814	C	T
+816	A	C
+817	T	A
+818	T	C
+819	C	T
+820	A	T
+821	C	T
+823	T	G
+824	T	G
+825	T	C
+828	C	A
+829	G	C
+830	G	A
+831	A	G
+832	C	G
+834	G	T
+836	A	C
+838	G	A
+839	C	A
+841	A	C
+842	A	T
+844	C	A
+846	T	A
+848	T	G
+849	A	T
+851	G	T
+853	A	G
+854	T	A
+856	G	A
+857	A	T
+858	T	A
+860	T	A
+864	A	C
+865	A	G
+867	C	T
+868	G	T
+869	A	T
+870	T	A
+872	T	A
+873	A	T
+874	T	G
+876	T	A
+877	G	A
+881	A	C
+882	A	T
+883	A	T
+884	C	T
+885	T	A
+886	T	A
+887	T	A
+888	A	T
+889	A	G
+892	G	T
+895	T	A
+897	T	A
+898	A	G
+899	A	C
+900	A	T
+901	G	A
+902	C	T
+903	T	A
+904	A	G
+905	T	C
+906	A	T
+907	G	A
+908	C	A
+909	T	C
+912	C	A
+913	A	C
+914	A	T
+915	A	T
+916	C	A
+917	T	G
+919	A	C
+920	G	A
+921	T	A
+922	C	G
+923	A	T
+924	A	C
+925	G	A
+926	T	C
+927	C	T
+929	C	G
+930	T	C
+931	A	T
+934	T	A
+935	G	A
+936	C	T
+937	A	G
+940	G	C
+941	A	C
+942	T	C
+943	C	A
+944	C	A
+947	A	T
+948	C	T
+949	A	G
+950	T	A
+952	G	A
+953	A	T
+955	A	G
+956	T	A
+958	G	A
+959	A	G
+960	T	C
+961	A	T
+962	G	A
+964	T	A
+966	C	A
+967	A	C
+970	C	A
+971	A	T
+973	A	T
+974	T	A
+975	A	T
+976	T	C
+978	T	A
+982	C	A
+985	A	T
+987	A	T
+988	T	C
+990	T	A
+991	C	T
+992	A	T
+993	A	C
+994	T	G
+995	T	A
+996	C	T
+997	G	A
+999	T	A
+1000	A	G
+1002	A	T
+1003	G	A
+1004	A	G
+1005	T	C
+1007	G	A
+1008	C	T
+1009	A	G
+1010	A	G
+1011	T	A
+1012	G	C
+1013	G	A
+1015	C	T
+1017	A	T
+1018	T	A
+1019	A	T
+1021	A	G
+1023	T	A
+1024	G	A
+1025	T	A
+1026	A	T
+1027	A	G
+1029	T	G
+1032	G	T
+1033	G	A
+1035	T	A
+1036	A	T
+1037	A	T
+1038	A	T
+1039	T	C
+1040	T	A
+1041	T	G
+1042	C	A
+1043	A	T
+1044	G	A
+1045	A	C
+1048	C	T
+1049	T	A
+1050	A	T
+1051	T	A
+1055	A	G
+1056	T	C
+1058	G	T
+1059	C	A
+1062	A	G
+1063	A	T
+1064	T	A
+1065	G	T
+1066	T	G
+1067	A	G
+1069	G	T
+1070	G	T
+1072	T	A
+1073	T	C
+1074	T	A
+1075	A	G
+1076	C	A
+1077	A	G
+1078	G	A
+1079	A	T
+1080	G	T
+1081	A	G
+1082	T	A
+1083	T	A
+1084	G	T
+1085	A	T
+1086	A	G
+1087	T	G
+1088	T	G
+1089	G	A
+1090	G	A
+1091	G	A
+1096	A	T
+1097	A	T
+1098	A	T
+1099	T	A
+1100	T	A
+1103	A	T
+1104	T	A
+1106	T	A
+1109	A	C
+1110	A	T
+1112	C	G
+1113	T	A
+1114	A	C
+1115	G	T
+1116	A	T
+1117	C	T
+1118	T	C
+1121	C	A
+1124	A	T
+1126	T	A
+1127	T	G
+1130	G	T
+1131	T	G
+1133	T	A
+1134	G	T
+1135	A	C
+1138	C	G
+1140	T	C
+1141	G	C
+1142	A	C
+1143	C	T
+1144	C	G
+1145	C	T
+1146	T	A
+1147	G	A
+1148	T	A
+1151	A	T
+1152	A	T
+1153	A	C
+1154	T	C
+1155	T	A
+1156	C	A
+1157	C	A
+1158	A	T
+1159	A	T
+1160	A	T
+1161	T	A
+1165	T	G
+1166	T	A
+1167	A	T
+1171	G	A
+1172	A	C
+1173	T	A
+1175	C	T
+1176	A	T
+1177	A	T
+1178	T	A
+1179	T	C
+1180	T	A
+1182	C	T
+1183	A	G
+1186	G	A
+1187	A	C
+1188	T	A
+1189	A	G
+1190	C	A
+1193	A	G
+1195	G	T
+1196	G	T
+1197	A	T
+1198	T	A
+1199	T	A
+1202	A	T
+1203	T	A
+1204	A	G
+1205	T	A
+1207	G	A
+1208	A	G
+1209	A	C
+1211	G	A
+1212	C	A
+1213	A	G
+1215	A	T
+1216	G	C
+1217	A	T
+1218	T	G
+1219	C	A
+1220	T	A
+1221	G	A
+1222	A	T
+1223	A	C
+1224	A	T
+1225	T	G
+1226	C	A
+1227	T	A
+1228	G	T
+1230	A	T
+1231	T	A
+1233	T	A
+1234	A	G
+1235	A	G
+1237	G	C
+1238	G	A
+1240	C	A
+1242	A	T
+1244	A	T
+1245	T	G
+1247	T	G
+1249	A	G
+1250	G	T
+1251	G	A
+1252	G	A
+1253	T	A
+1254	A	T
+1256	A	C
+1257	T	A
+1259	C	A
+1260	A	T
+1261	A	G
+1262	A	C
+1264	G	T
+1265	C	T
+1267	T	A
+1268	T	G
+1269	T	A
+1271	G	A
+1272	A	T
+1273	A	G
+1274	A	T
+1277	T	A
+1280	A	G
+1281	T	A
+1282	G	T
+1283	G	C
+1285	T	G
+1286	C	G
+1287	A	C
+1288	G	C
+1289	G	T
+1290	C	A
+1291	C	G
+1293	A	T
+1294	G	T
+1295	T	C
+1296	T	A
+1297	T	A
+1298	C	A
+1300	A	C
+1301	A	T
+1302	A	T
+1303	C	A
+1306	A	G
+1307	T	G
+1308	T	C
+1309	G	T
+1310	G	T
+1311	C	A
+1313	T	G
+1314	A	T
+1315	T	A
+1316	G	A
+1317	T	A
+1322	A	T
+1323	A	T
+1326	T	A
+1327	A	C
+1328	T	C
+1333	C	A
+1337	C	A
+1338	A	T
+1340	A	T
+1341	T	A
+1343	T	G
+1345	A	G
+1346	G	A
+1348	G	A
+1350	A	T
+1351	A	T
+1352	A	T
+1353	T	A
+1355	T	A
+1356	A	T
+1357	T	A
+1361	A	G
+1362	T	A
+1364	G	C
+1365	A	T
+1366	A	G
+1368	T	A
+1369	G	T
+1373	C	T
+1375	T	A
+1376	T	C
+1378	A	G
+1379	C	A
+1380	A	T
+1381	G	T
+1382	A	T
+1383	T	A
+1384	T	G
+1385	T	G
+1391	G	A
+1393	G	T
+1394	A	T
+1397	T	G
+1398	A	T
+1399	T	A
+1400	G	T
+1401	T	A
+1403	T	A
+1406	A	T
+1407	A	T
+1409	T	A
+1410	T	A
+1413	A	T
+1414	A	G
+1416	T	A
+1419	A	T
+1420	G	T
+1421	A	T
+1422	T	A
+1423	T	A
+1424	T	C
+1425	A	T
+1426	A	T
+1427	C	T
+1429	T	A
+1431	T	A
+1432	A	G
+1433	T	C
+1434	A	T
+1436	C	A
+1437	T	A
+1438	G	A
+1443	A	T
+1445	A	G
+1446	T	C
+1447	A	T
+1448	G	T
+1449	C	T
+1451	T	C
+1452	T	A
+1453	T	G
+1454	C	A
+1459	G	C
+1460	A	C
+1462	C	T
+1463	C	T
+1464	A	T
+1465	T	C
+1466	T	A
+1467	T	A
+1468	C	G
+1470	A	T
+1473	T	A
+1474	G	A
+1475	A	T
+1477	A	G
+1479	A	T
+1480	G	A
+1481	T	G
+1483	A	T
+1484	G	A
+1486	T	A
+1490	A	C
+1491	T	A
+1493	C	A
+1497	A	T
+1500	T	A
+1501	A	C
+1502	A	C
+1504	C	T
+1505	C	T
+1507	T	A
+1508	T	A
+1509	A	T
+1510	A	T
+1511	A	T
+1513	T	A
+1514	T	A
+1516	A	T
+1520	A	C
+1521	T	G
+1522	T	C
+1523	C	T
+1524	G	A
+1525	C	G
+1526	T	A
+1527	A	T
+1528	G	A
+1530	T	A
+1532	A	T
+1533	A	T
+1537	A	G
+1539	T	A
+1541	T	A
+1542	A	T
+1543	G	T
+1546	T	A
+1549	A	C
+1550	A	T
+1551	T	A
+1553	T	A
+1555	C	A
+1556	A	G
+1557	A	T
+1559	G	A
+1560	T	A
+1562	A	T
+1563	A	T
+1565	T	C
+1566	T	A
+1567	A	T
+1568	C	T
+1570	T	C
+1571	T	C
+1572	A	T
+1573	C	A
+1574	C	A
+1576	A	G
+1579	G	A
+1580	A	G
+1581	T	G
+1583	G	C
+1584	G	A
+1587	A	C
+1588	A	C
+1590	C	A
+1591	C	G
+1592	C	T
+1593	A	T
+1594	G	A
+1595	T	C
+1596	T	A
+1598	C	A
+1600	A	G
+1601	A	G
+1603	G	A
+1604	G	T
+1605	A	T
+1606	A	C
+1607	T	C
+1608	T	A
+1609	C	T
+1610	C	A
+1611	A	T
+1612	T	G
+1613	A	C
+1615	G	C
+1617	T	A
+1618	C	G
+1619	C	A
+1621	G	T
+1623	A	T
+1624	T	A
+1626	T	A
+1628	A	G
+1629	A	T
+1631	G	A
+1633	A	G
+1634	A	C
+1638	T	A
+1639	G	A
+1640	C	G
+1641	A	T
+1643	G	C
+1644	T	A
+1646	C	T
+1648	A	G
+1649	T	A
+1651	G	A
+1652	A	T
+1654	A	C
+1655	T	A
+1656	A	T
+1657	C	A
+1661	A	T
+1663	A	G
+1664	T	A
+1668	T	C
+1669	G	A
+1671	C	T
+1673	A	C
+1674	T	A
+1676	C	T
+1678	A	T
+1679	T	A
+1680	A	T
+1681	T	C
+1683	T	A
+1684	C	T
+1686	A	T
+1688	A	T
+1689	T	G
+1691	T	A
+1692	G	T
+1693	T	G
+1694	A	C
+1696	G	C
+1697	C	A
+1698	T	A
+1699	C	A
+1702	A	T
+1703	A	C
+1704	A	T
+1705	T	C
+1708	C	A
+1710	T	A
+1713	A	T
+1714	A	C
+1715	C	T
+1716	T	A
+1718	T	A
+1720	C	A
+1721	A	G
+1724	G	T
+1727	T	C
+1728	A	T
+1730	C	T
+1731	T	G
+1733	T	C
+1734	G	T
+1736	C	A
+1738	A	T
+1739	A	C
+1741	T	G
+1742	C	T
+1745	T	A
+1749	T	C
+1751	A	C
+1752	C	A
+1753	G	T
+1754	C	T
+1756	T	A
+1760	T	A
+1761	A	T
+1762	A	T
+1763	A	C
+1764	T	C
+1765	T	A
+1769	C	A
+1770	C	A
+1772	A	T
+1774	A	T
+1775	T	A
+1776	A	T
+1778	A	C
+1779	T	A
+1781	C	A
+1782	A	T
+1784	A	T
+1786	T	C
+1787	T	C
+1788	T	A
+1789	C	T
+1791	A	T
+1792	T	G
+1793	C	T
+1794	T	A
+1795	G	A
+1797	A	C
+1799	T	G
+1800	C	T
+1802	G	A
+1803	T	A
+1804	A	G
+1805	A	T
+1806	A	T
+1807	G	A
+1808	T	A
+1809	T	C
+1810	A	C
+1812	C	A
+1813	C	G
+1814	A	G
+1815	A	T
+1817	G	C
+1818	T	A
+1819	G	C
+1820	C	A
+1822	C	G
+1823	A	G
+1825	G	A
+1826	G	T
+1827	A	T
+1828	A	T
+1830	T	A
+1833	A	C
+1836	C	A
+1837	T	C
+1838	T	A
+1839	A	G
+1840	C	T
+1841	A	G
+1843	T	G
+1844	G	T
+1846	G	A
+1847	T	G
+1848	G	A
+1849	A	G
+1850	G	A
+1851	A	T
+1852	G	A
+1853	A	T
+1854	T	A
+1857	A	T
+1858	A	G
+1859	T	A
+1864	G	T
+1865	A	T
+1867	T	A
+1868	T	C
+1869	T	C
+1871	C	A
+1872	C	T
+1873	A	G
+1875	T	A
+1876	G	T
+1877	A	C
+1878	A	T
+1881	T	A
+1882	T	C
+1883	C	A
+1885	C	A
+1889	A	C
+1890	A	T
+1895	C	T
+1897	A	G
+1898	T	A
+1900	G	A
+1902	T	A
+1904	A	T
+1905	A	T
+1906	A	T
+1907	T	C
+1908	T	A
+1909	T	G
+1910	C	A
+1911	A	T
+1913	A	T
+1914	T	A
+1915	G	T
+1916	T	C
+1917	A	C
+1918	T	A
+1920	C	T
+1922	C	T
+1924	A	G
+1927	G	C
+1928	T	C
+1930	C	T
+1931	C	A
+1933	T	A
+1934	A	T
+1935	T	A
+1936	A	G
+1937	T	G
+1939	G	C
+1940	G	C
+1941	A	C
+1942	C	G
+1944	C	A
+1945	G	T
+1946	C	T
+1948	T	A
+1949	T	A
+1950	A	C
+1952	A	T
+1953	C	T
+1954	A	G
+1956	T	A
+1957	G	A
+1958	T	A
+1960	A	C
+1963	C	G
+1964	A	G
+1965	A	C
+1966	G	T
+1967	G	A
+1968	C	T
+1969	T	G
+1971	T	G
+1973	A	G
+1974	G	A
+1975	G	A
+1976	G	A
+1977	A	C
+1978	A	T
+1979	A	T
+1980	C	T
+1981	T	A
+1983	T	A
+1984	A	G
+1985	T	G
+1986	A	C
+1988	G	C
+1989	C	T
+1990	G	T
+1991	C	T
+1992	T	A
+1993	T	G
+1994	T	A
+1996	G	A
+1997	A	C
+1998	A	T
+2001	T	C
+2002	A	G
+2003	C	G
+2004	C	A
+2006	G	T
+2007	A	G
+2010	G	T
+2011	G	T
+2013	T	A
+2020	T	G
+2021	T	A
+2023	G	T
+2025	A	T
+2026	T	A
+2027	A	T
+2029	A	C
+2030	T	C
+2031	T	A
+2032	C	G
+2033	C	A
+2035	G	A
+2036	A	T
+2037	A	T
+2039	T	C
+2041	A	T
+2042	C	T
+2043	T	A
+2044	T	C
+2045	T	C
+2047	C	G
+2048	C	T
+2050	G	A
+2052	A	T
+2053	A	G
+2054	T	C
+2055	T	A
+2058	A	T
+2059	G	T
+2060	C	T
+2061	T	A
+2063	T	C
+2064	A	T
+2065	T	A
+2066	C	T
+2067	T	A
+2068	A	G
+2069	T	C
+2072	C	A
+2074	G	A
+2075	A	G
+2076	A	T
+2079	T	C
+2081	G	C
+2082	C	A
+2083	A	C
+2084	C	A
+2086	C	A
+2089	A	G
+2092	G	A
+2094	A	G
+2096	A	T
+2097	G	A
+2102	T	A
+2105	A	C
+2108	C	T
+2110	A	G
+2111	T	A
+2112	A	T
+2113	G	A
+2115	T	C
+2116	A	T
+2117	A	T
+2118	C	T
+2121	T	A
+2122	T	G
+2123	T	A
+2125	G	A
+2129	A	G
+2131	A	T
+2132	G	A
+2133	A	T
+2134	T	G
+2136	T	A
+2137	G	A
+2140	A	T
+2141	A	G
+2142	A	G
+2143	T	A
+2144	G	T
+2145	G	T
+2146	A	G
+2147	T	A
+2148	T	A
+2150	A	T
+2152	G	T
+2153	T	A
+2154	A	T
+2155	T	A
+2157	T	A
+2158	A	C
+2159	A	T
+2161	C	G
+2164	G	A
+2165	T	A
+2167	A	G
+2168	A	C
+2170	G	A
+2171	C	A
+2173	A	T
+2174	A	G
+2175	A	G
+2177	G	T
+2178	G	A
+2179	T	G
+2180	T	G
+2181	A	C
+2182	G	A
+2183	G	C
+2184	C	A
+2185	A	G
+2186	C	T
+2187	A	T
+2188	G	A
+2189	T	A
+2192	A	C
+2193	T	G
+2194	A	C
+2195	C	A
+2196	G	A
+2197	C	T
+2198	A	T
+2199	A	C
+2200	T	C
+2201	T	A
+2202	C	A
+2203	C	A
+2207	A	G
+2211	A	T
+2212	A	T
+2213	G	A
+2215	T	C
+2217	T	A
+2218	C	A
+2219	A	T
+2220	A	G
+2221	A	T
+2222	T	A
+2223	G	T
+2224	T	A
+2225	A	G
+2226	T	A
+2227	A	T
+2228	G	C
+2229	A	T
+2231	C	T
+2232	T	A
+2233	T	G
+2234	T	A
+2236	G	T
+2238	A	T
+2239	T	C
+2241	T	A
+2242	C	G
+2243	A	T
+2246	T	A
+2247	A	T
+2249	A	C
+2250	T	A
+2251	G	A
+2252	C	T
+2255	T	A
+2261	A	T
+2266	A	G
+2267	T	A
+2268	A	C
+2269	G	T
+2271	C	T
+2272	T	G
+2274	T	A
+2275	G	T
+2277	A	T
+2278	T	A
+2280	T	A
+2282	A	T
+2284	A	T
+2285	T	A
+2286	A	T
+2288	A	C
+2289	T	A
+2290	T	G
+2291	C	G
+2293	G	C
+2294	G	C
+2295	A	T
+2296	C	G
+2297	C	A
+2299	G	A
+2301	T	G
+2302	A	G
+2304	G	A
+2305	G	C
+2308	C	A
+2309	A	T
+2310	A	T
+2311	A	G
+2312	T	C
+2313	T	C
+2315	C	A
+2319	C	A
+2320	G	A
+2321	A	T
+2322	A	T
+2324	T	A
+2329	A	C
+2330	A	T
+2331	T	G
+2332	C	A
+2333	T	A
+2334	G	A
+2337	A	C
+2340	C	A
+2341	A	C
+2342	A	T
+2343	A	T
+2344	C	G
+2345	T	A
+2346	T	A
+2350	G	A
+2352	A	G
+2353	A	G
+2354	A	C
+2355	G	T
+2356	G	A
+2357	C	A
+2361	T	A
+2362	A	G
+2363	A	C
+2365	G	A
+2366	C	T
+2367	A	G
+2370	G	A
+2372	T	A
+2373	A	C
+2375	A	T
+2376	C	A
+2378	T	A
+2379	A	T
+2381	A	T
+2382	T	A
+2383	A	T
+2385	A	T
+2386	T	A
+2388	T	G
+2390	T	G
+2392	A	G
+2393	G	A
+2394	G	A
+2395	G	A
+2396	A	G
+2397	A	T
+2398	A	T
+2399	G	C
+2401	T	A
+2402	C	G
+2403	T	A
+2404	A	T
+2405	G	C
+2408	C	T
+2409	A	T
+2412	T	A
+2413	T	G
+2415	A	T
+2416	G	A
+2417	T	A
+2419	A	C
+2421	T	A
+2422	C	A
+2423	A	T
+2424	A	G
+2427	G	T
+2429	T	A
+2430	T	C
+2431	A	G
+2433	C	A
+2435	A	C
+2436	A	T
+2437	G	A
+2438	C	A
+2439	T	A
+2442	A	G
+2443	A	C
+2446	C	T
+2447	A	T
+2448	G	A
+2452	T	G
+2453	T	A
+2454	A	G
+2455	G	T
+2456	A	T
+2457	G	T
+2458	T	G
+2459	T	A
+2461	G	A
+2462	A	C
+2464	A	C
+2465	C	A
+2466	T	A
+2467	C	A
+2468	A	G
+2469	A	C
+2471	G	A
+2472	C	A
+2475	A	T
+2477	A	T
+2479	A	T
+2481	T	A
+2482	T	A
+2484	A	G
+2485	A	C
+2486	T	A
+2488	C	T
+2490	G	T
+2491	T	A
+2492	A	T
+2493	T	A
+2495	T	A
+2497	A	G
+2498	A	C
+2500	G	A
+2501	C	A
+2502	A	T
+2503	A	T
+2504	A	C
+2506	T	A
+2507	C	A
+2508	T	A
+2509	A	T
+2510	A	T
+2511	A	T
+2512	T	A
+2514	T	A
+2515	A	G
+2516	T	G
+2517	A	T
+2518	G	A
+2519	G	T
+2520	T	A
+2522	T	C
+2523	A	T
+2524	A	G
+2525	C	A
+2526	T	A
+2527	G	C
+2528	A	T
+2530	C	A
+2531	T	A
+2536	A	T
+2537	A	T
+2539	T	G
+2540	T	A
+2542	G	T
+2543	A	C
+2545	T	A
+2546	C	A
+2549	A	T
+2552	T	A
+2553	A	C
+2556	C	A
+2557	A	G
+2558	A	T
+2559	A	T
+2560	G	T
+2564	T	C
+2565	T	A
+2566	T	A
+2569	A	C
+2572	C	A
+2573	C	T
+2574	A	T
+2575	A	C
+2576	T	C
+2577	T	A
+2578	C	T
+2579	C	T
+2580	A	T
+2582	T	C
+2585	C	A
+2588	A	C
+2590	T	A
+2591	C	A
+2592	T	A
+2595	A	T
+2596	A	C
+2597	A	T
+2598	T	G
+2599	C	G
+2600	T	A
+2601	G	T
+2602	G	T
+2603	A	G
+2607	T	G
+2608	T	G
+2609	G	T
+2610	G	T
+2612	T	A
+2614	G	A
+2617	A	G
+2619	T	A
+2625	A	T
+2626	G	A
+2627	A	T
+2628	T	A
+2629	A	G
+2630	T	A
+2631	A	T
+2633	A	T
+2635	G	A
+2637	T	A
+2638	A	T
+2641	T	A
+2642	T	A
+2646	A	G
+2648	A	G
+2649	G	T
+2651	G	C
+2652	T	A
+2654	C	T
+2655	A	T
+2656	A	T
+2658	T	A
+2659	T	A
+2660	T	A
+2661	A	T
+2662	A	T
+2663	A	T
+2664	T	A
+2665	T	G
+2666	T	A
+2667	A	T
+2668	G	A
+2669	A	T
+2672	T	A
+2677	A	G
+2680	G	A
+2681	A	T
+2685	T	A
+2686	A	T
+2687	T	C
+2689	T	G
+2690	C	A
+2691	A	T
+2692	G	A
+2693	A	T
+2694	T	A
+2695	A	T
+2696	T	C
+2697	A	T
+2698	T	G
+2699	C	G
+2700	T	G
+2701	G	T
+2702	G	T
+2703	G	T
+2704	T	A
+2705	T	A
+2707	A	T
+2708	A	C
+2709	T	A
+2712	A	T
+2713	T	G
+2714	C	T
+2715	T	A
+2716	G	A
+2720	T	C
+2722	A	T
+2723	C	A
+2724	A	T
+2725	T	C
+2726	A	C
+2727	T	A
+2728	C	G
+2729	C	A
+2730	A	T
+2732	A	C
+2734	G	C
+2735	C	A
+2736	T	A
+2737	C	T
+2738	A	T
+2739	A	G
+2740	T	G
+2743	G	C
+2744	T	C
+2745	G	C
+2746	C	G
+2747	C	G
+2748	C	A
+2749	G	A
+2750	G	T
+2753	T	A
+2754	A	T
+2755	A	G
+2756	A	G
+2757	T	C
+2758	G	A
+2759	G	A
+2760	C	A
+2761	A	G
+2762	A	C
+2764	G	A
+2765	C	T
+2767	A	C
+2768	T	A
+2769	A	T
+2770	C	T
+2771	A	T
+2772	T	A
+2773	T	G
+2776	G	A
+2777	T	A
+2778	A	C
+2781	C	T
+2782	A	G
+2784	T	A
+2785	G	T
+2786	A	C
+2787	A	T
+2791	T	G
+2792	C	A
+2793	T	A
+2795	A	T
+2796	A	T
+2797	G	A
+2799	T	A
+2800	A	G
+2802	A	G
+2803	G	C
+2804	T	A
+2805	G	T
+2806	C	A
+2808	T	A
+2809	A	G
+2810	A	C
+2811	A	T
+2812	G	A
+2813	C	T
+2814	T	G
+2815	A	G
+2816	T	A
+2817	G	T
+2818	G	A
+2819	A	T
+2821	A	G
+2822	T	A
+2823	T	A
+2824	G	T
+2826	A	T
+2827	T	A
+2830	A	G
+2833	G	A
+2834	A	T
+2835	T	G
+2836	A	T
+2838	G	T
+2839	T	A
+2840	T	A
+2845	A	T
+2846	A	T
+2848	T	A
+2849	T	C
+2850	T	C
+2851	A	G
+2852	C	T
+2853	C	T
+2854	G	A
+2855	T	G
+2856	T	C
+2857	A	T
+2858	G	T
+2859	C	T
+2861	T	G
+2862	T	G
+2864	G	T
+2866	T	A
+2867	T	G
+2869	A	G
+2870	G	T
+2871	G	T
+2872	G	C
+2873	T	C
+2875	C	A
+2876	C	A
+2877	T	A
+2878	A	G
+2879	A	T
+2881	G	T
+2882	T	C
+2883	A	T
+2884	T	G
+2887	G	A
+2888	C	G
+2890	A	C
+2891	G	A
+2893	C	T
+2894	A	T
+2895	T	A
+2896	T	G
+2897	T	A
+2899	G	C
+2902	C	T
+2904	A	T
+2905	T	G
+2906	A	G
+2907	T	C
+2908	G	A
+2909	G	C
+2910	C	A
+2912	C	A
+2913	A	T
+2914	A	G
+2916	T	G
+2917	G	T
+2919	G	T
+2921	A	C
+2922	T	A
+2923	T	A
+2924	C	T
+2928	A	T
+2930	T	G
+2931	T	C
+2932	A	T
+2933	G	C
+2934	C	T
+2935	T	A
+2936	C	T
+2937	T	G
+2939	T	A
+2940	G	A
+2944	A	C
+2946	A	T
+2947	C	A
+2948	A	G
+2950	A	C
+2951	G	T
+2952	T	A
+2953	C	T
+2954	T	C
+2956	T	A
+2957	C	T
+2959	A	G
+2960	T	G
+2962	G	T
+2963	G	C
+2964	A	T
+2965	T	G
+2966	C	G
+2968	G	T
+2970	T	G
+2971	T	A
+2973	G	T
+2974	A	G
+2975	G	T
+2976	T	A
+2977	G	T
+2978	T	C
+2980	T	C
+2981	C	T
+2982	A	T
+2983	C	A
+2984	T	A
+2985	T	A
+2986	A	G
+2987	A	G
+2988	A	T
+2989	G	A
+2990	G	A
+2994	T	C
+2995	A	T
+2996	A	T
+2997	C	A
+2998	T	A
+3001	A	T
+3002	T	G
+3003	A	G
+3004	T	A
+3005	G	C
+3006	G	T
+3007	A	T
+3008	C	T
+3009	T	A
+3010	T	A
+3011	T	A
+3013	A	G
+3015	A	T
+3016	G	T
+3017	A	C
+3018	T	C
+3019	T	G
+3021	C	G
+3023	C	G
+3024	G	A
+3026	G	A
+3029	A	T
+3030	A	T
+3031	G	A
+3032	T	G
+3033	T	A
+3034	A	C
+3035	G	A
+3037	C	A
+3038	A	T
+3041	T	C
+3042	A	T
+3043	A	T
+3044	C	T
+3046	T	A
+3047	T	G
+3048	T	G
+3049	A	G
+3050	G	A
+3051	G	T
+3052	G	T
+3053	A	T
+3054	T	A
+3055	T	C
+3056	T	C
+3057	A	T
+3058	C	G
+3059	C	A
+3061	G	A
+3063	T	A
+3064	A	T
+3065	A	T
+3066	A	T
+3067	T	A
+3068	T	A
+3070	A	G
+3071	A	C
+3073	G	T
+3074	C	A
+3077	A	T
+3078	T	A
+3079	T	G
+3080	T	C
+3082	G	A
+3083	C	A
+3084	A	T
+3087	T	A
+3088	A	T
+3089	A	G
+3090	A	G
+3091	T	G
+3092	G	T
+3093	G	T
+3094	G	T
+3097	T	A
+3099	T	A
+3101	T	C
+3102	A	T
+3104	C	T
+3107	T	C
+3110	C	A
+3112	A	G
+3115	G	A
+3116	A	G
+3117	T	A
+3118	A	T
+3119	G	T
+3122	T	C
+3123	A	T
+3127	T	G
+3130	G	A
+3131	C	A
+3133	A	T
+3134	A	T
+3135	T	G
+3137	T	A
+3138	G	T
+3139	T	A
+3140	A	T
+3141	T	A
+3143	T	A
+3144	A	T
+3145	A	G
+3146	A	G
+3147	T	A
+3149	G	T
+3151	G	C
+3153	A	T
+3154	C	A
+3156	T	G
+3157	A	G
+3158	T	G
+3159	G	A
+3160	G	A
+3162	A	T
+3163	A	G
+3164	G	C
+3165	T	A
+3167	C	A
+3169	G	A
+3170	A	T
+3171	A	T
+3173	T	C
+3175	A	G
+3176	C	G
+3178	G	T
+3179	G	T
+3180	T	A
+3181	T	G
+3182	T	G
+3185	G	C
+3186	A	T
+3187	G	A
+3188	C	T
+3191	T	G
+3192	T	A
+3193	A	G
+3194	G	A
+3195	A	G
+3198	G	T
+3199	G	A
+3206	A	T
+3207	T	A
+3209	T	C
+3211	A	T
+3212	C	T
+3214	T	A
+3215	T	A
+3217	A	C
+3218	A	T
+3220	C	G
+3221	T	A
+3222	A	T
+3223	G	A
+3224	A	G
+3225	T	A
+3226	A	T
+3228	A	T
+3229	T	A
+3230	G	A
+3241	A	C
+3243	T	A
+3244	C	T
+3246	A	C
+3247	T	G
+3248	A	T
+3249	C	T
+3250	G	T
+3251	T	C
+3253	T	A
+3254	C	T
+3256	A	G
+3257	T	A
+3259	G	A
+3261	T	A
+3262	A	T
+3263	A	T
+3264	A	T
+3265	T	A
+3266	T	G
+3267	T	G
+3269	G	T
+3270	G	A
+3271	A	T
+3273	A	T
+3275	T	G
+3276	T	C
+3277	T	A
+3278	G	A
+3279	C	A
+3280	A	G
+3281	A	C
+3283	G	T
+3284	C	T
+3286	T	A
+3287	T	A
+3288	A	T
+3289	A	C
+3290	A	C
+3291	T	A
+3292	C	A
+3293	C	A
+3295	A	G
+3297	A	G
+3298	G	A
+3299	A	T
+3300	G	T
+3301	A	G
+3302	T	A
+3303	T	A
+3304	G	A
+3307	A	T
+3308	A	T
+3311	T	A
+3312	A	C
+3313	T	A
+3314	A	C
+3315	C	A
+3317	C	G
+3318	A	T
+3319	A	T
+3320	G	A
+3323	A	T
+3324	T	A
+3326	T	C
+3327	A	T
+3328	T	A
+3329	C	T
+3330	T	A
+3332	T	C
+3333	A	C
+3334	A	T
+3335	C	T
+3336	C	T
+3339	T	A
+3340	T	A
+3341	T	G
+3343	A	G
+3344	G	A
+3345	A	C
+3346	G	T
+3347	A	T
+3350	T	G
+3351	C	G
+3352	T	G
+3354	G	A
+3355	G	A
+3356	G	A
+3357	A	C
+3358	A	C
+3359	A	C
+3360	C	T
+3361	C	T
+3362	C	T
+3363	T	A
+3364	T	C
+3365	T	G
+3367	C	T
+3368	G	A
+3369	A	T
+3370	T	G
+3373	G	A
+3374	A	C
+3375	T	A
+3376	A	G
+3377	C	A
+3379	G	T
+3381	A	T
+3386	A	T
+3387	T	A
+3388	T	A
+3391	A	C
+3392	T	C
+3394	C	G
+3395	C	T
+3398	T	C
+3399	A	T
+3400	G	T
+3403	T	A
+3404	C	G
+3406	A	T
+3407	G	C
+3409	T	A
+3410	C	A
+3411	T	A
+3412	A	G
+3414	A	T
+3416	A	T
+3418	G	C
+3419	T	A
+3420	T	A
+3421	C	T
+3422	A	T
+3423	A	G
+3424	T	A
+3425	T	A
+3426	G	A
+3429	A	T
+3431	A	T
+3432	T	A
+3434	T	C
+3436	A	G
+3437	C	A
+3438	A	T
+3439	G	T
+3442	T	A
+3443	A	T
+3444	T	G
+3445	A	T
+3446	T	A
+3447	G	T
+3449	A	T
+3450	T	G
+3451	T	A
+3452	T	C
+3453	G	A
+3455	C	A
+3456	A	T
+3457	A	G
+3458	A	C
+3459	T	G
+3460	G	C
+3462	G	A
+3463	C	T
+3465	A	G
+3467	C	A
+3468	G	T
+3469	T	A
+3470	A	C
+3473	C	A
+3474	T	C
+3475	A	G
+3476	A	G
+3477	C	A
+3478	G	A
+3479	G	A
+3481	A	T
+3482	A	T
+3483	A	G
+3484	T	A
+3485	T	A
+3486	G	T
+3488	A	T
+3489	T	A
+3490	A	T
+3491	T	A
+3492	A	T
+3496	T	A
+3497	A	G
+3498	T	A
+3501	A	G
+3502	A	T
+3503	G	T
+3504	G	A
+3506	T	A
+3507	A	T
+3508	T	A
+3511	A	G
+3512	A	G
+3513	T	A
+3514	G	C
+3515	G	T
+3517	C	A
+3518	T	A
+3520	A	T
+3521	A	T
+3522	A	T
+3523	T	A
+3528	T	A
+3530	T	A
+3533	A	G
+3535	A	T
+3536	G	A
+3537	A	T
+3538	T	A
+3539	A	C
+3540	T	A
+3541	A	C
+3543	A	T
+3544	C	A
+3545	C	A
+3550	A	G
+3552	T	A
+3553	G	A
+3554	A	T
+3556	A	G
+3557	T	A
+3558	A	T
+3559	G	T
+3560	A	C
+3563	C	T
+3565	T	G
+3568	G	A
+3569	T	A
+3570	T	A
+3571	A	T
+3572	A	C
+3574	T	G
+3575	C	G
+3576	A	T
+3578	G	A
+3580	G	T
+3581	A	T
+3583	T	A
+3587	T	A
+3588	T	A
+3589	A	T
+3590	A	T
+3593	T	A
+3594	A	T
+3595	T	G
+3596	A	T
+3597	T	A
+3598	G	T
+3599	T	C
+3602	C	A
+3603	A	T
+3604	T	A
+3606	T	C
+3609	C	T
+3613	A	G
+3615	T	G
+3616	G	C
+3618	G	C
+3619	C	A
+3620	A	T
+3621	C	T
+3622	A	G
+3624	T	A
+3626	T	G
+3627	A	T
+3628	G	T
+3629	G	A
+3631	T	C
+3632	A	C
+3633	T	G
+3634	C	A
+3635	C	A
+3636	G	A
+3637	A	G
+3639	A	T
+3641	A	G
+3642	T	A
+3643	G	A
+3644	G	A
+3645	A	T
+3646	A	G
+3647	A	C
+3648	T	C
+3649	G	T
+3650	C	T
+3651	C	T
+3652	T	A
+3653	T	A
+3658	A	C
+3659	A	T
+3661	C	G
+3662	T	A
+3664	G	A
+3665	A	G
+3666	T	A
+3668	G	T
+3669	A	T
+3670	A	C
+3672	T	A
+3673	C	A
+3674	T	G
+3676	A	G
+3677	G	T
+3680	T	G
+3681	A	T
+3682	G	T
+3683	G	A
+3685	T	A
+3688	A	G
+3689	A	C
+3690	T	C
+3691	G	C
+3693	C	A
+3694	C	G
+3695	C	G
+3696	A	T
+3697	G	A
+3698	G	T
+3699	T	C
+3700	A	C
+3701	T	C
+3702	C	T
+3704	C	T
+3706	C	T
+3707	T	A
+3709	T	A
+3711	T	A
+3716	A	T
+3717	A	G
+3718	A	G
+3719	T	A
+3720	G	A
+3722	A	C
+3725	C	T
+3727	G	A
+3728	T	A
+3730	A	T
+3731	A	T
+3732	A	G
+3733	T	C
+3734	T	G
+3735	G	T
+3736	C	G
+3737	G	A
+3739	G	T
+3740	A	T
+3741	T	A
+3742	T	A
+3743	T	A
+3746	A	C
+3747	A	C
+3748	A	T
+3749	C	A
+3750	C	T
+3752	A	C
+3754	T	G
+3755	C	T
+3756	T	A
+3757	G	C
+3758	T	A
+3761	A	T
+3762	A	T
+3763	C	A
+3764	T	A
+3765	T	A
+3766	A	T
+3767	A	T
+3770	T	A
+3771	A	T
+3772	T	G
+3778	G	A
+3780	T	A
+3783	A	T
+3784	A	G
+3785	A	C
+3786	T	A
+3787	G	T
+3789	A	T
+3791	C	T
+3792	T	A
+3793	T	G
+3794	T	G
+3796	G	C
+3797	G	T
+3799	C	G
+3803	T	G
+3804	A	T
+3805	G	A
+3806	G	C
+3807	T	C
+3808	A	C
+3809	C	A
+3810	C	T
+3811	C	A
+3814	A	G
+3815	A	G
+3817	G	C
+3818	G	A
+3819	T	A
+3820	C	A
+3821	A	T
+3823	A	G
+3824	T	G
+3825	A	C
+3826	G	A
+3827	G	A
+3829	A	G
+3831	C	T
+3832	G	C
+3833	A	C
+3834	T	A
+3835	C	A
+3836	C	A
+3837	A	T
+3839	A	G
+3840	T	G
+3841	A	G
+3842	G	A
+3843	G	T
+3844	G	A
+3845	A	T
+3846	T	A
+3847	A	T
+3850	T	A
+3852	A	T
+3853	A	G
+3854	T	C
+3855	T	A
+3856	G	A
+3857	C	G
+3858	A	C
+3860	G	A
+3862	A	T
+3863	A	G
+3864	C	G
+3866	G	A
+3867	G	C
+3869	A	T
+3870	C	T
+3871	T	A
+3872	T	A
+3874	A	C
+3877	C	T
+3878	A	T
+3879	T	A
+3880	T	A
+3881	T	A
+3883	A	G
+3885	A	T
+3886	G	A
+3888	T	A
+3890	A	T
+3891	A	T
+3892	A	T
+3894	T	A
+3895	T	G
+3896	T	G
+3898	G	T
+3900	A	T
+3901	T	G
+3902	G	A
+3904	G	T
+3905	A	G
+3906	T	G
+3908	G	A
+3909	G	C
+3911	A	T
+3912	C	T
+3913	T	G
+3915	T	A
+3916	G	C
+3917	T	C
+3918	A	T
+3919	C	A
+3921	T	A
+3922	A	G
+3923	C	A
+3924	A	T
+3927	T	A
+3929	A	G
+3931	G	T
+3933	A	G
+3934	T	A
+3935	G	C
+3936	G	A
+3938	C	A
+3939	A	T
+3940	A	G
+3943	G	T
+3945	T	A
+
+INDELS
+position	type	base
