@@ -15,6 +15,7 @@ import mutaapic.utils.filesystem as filesystem
 import mutaapic.utils.foldseek as foldseek
 import mutaapic.utils.fetch as fetch
 import mutaapic.reporting.report as report
+from mutaapic.function.predict_function import predict_function, compare_function
 
 
 
@@ -28,7 +29,8 @@ def main():
     parser.add_argument("--exclude_af", action="store_true", help="Whether to exclude comparison with structures from Alphafold DB supported by Foldseek (default: False).")
     parser.add_argument("--top_k", type=int, default=10, help="Number of top structures found by Foldseek in specific DB to take into statistical analysis (default: 10).")
     parser.add_argument("--out_dir", type=str, default="./mutaap_results", help="Directory to save results (default: mutaap_results).")
-    
+    parser.add_argument("--email", default="example@example.com", help="Email for InterProScan API (required by EBI)")
+
     args = parser.parse_args()
 
     # initialize result placeholders for reporting
@@ -45,7 +47,7 @@ def main():
     af_structure_ids = None
     af_db_structures = None
 
-    def _resolve_db_root(db_root: str):
+    def _resolve_db_root(db_root: str) -> str:
         """Return the directory that actually contains the supported Foldseek databases."""
         candidates = [db_root, os.path.join(db_root, "db")]
         for candidate in candidates:
@@ -76,7 +78,6 @@ def main():
     orig_pdb = predict_structure.predictESM('orig', orig_sequence, args.out_dir)
     time.sleep(5)
     mut_pdb = predict_structure.predictESM('mut', mut_sequence, args.out_dir)
-
 
     # ================= STRUCTURE COMPARISON =================
     comparison_results = compare_structures.compare_structures(orig_pdb, mut_pdb)
@@ -132,6 +133,27 @@ def main():
         af_db_structures = fetch.download_af_structures(af_structure_ids, f"{args.out_dir}/af_db_structures")
 
 
+    # ================= FUNCTIONAL PREDICTION =================
+    function_results = None
+    try:
+        orig_go = predict_function(orig_sequence, email=args.email, label="orig")
+        mut_go  = predict_function(mut_sequence,  email=args.email, label="mut")
+        print("[DEBUG] orig_go:", orig_go)
+        print("[DEBUG] mut_go:", mut_go)
+
+        if orig_go and mut_go:
+            function_results = compare_function(orig_go, mut_go)
+
+            # Save per-ontology CSVs for downstream use
+            for ont, df in function_results.items():
+                df.to_csv(f"{args.out_dir}/go_{ont}_comparison.csv", index=False)
+        else:
+            print("[Function] Skipping comparison - one or both sequences failed annotation.")
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc() 
+        print(f"[Function] Skipping functional annotation: {e}")
 
     # ================= STATISTICS, REPORT GENERATION =================
 
@@ -142,6 +164,7 @@ def main():
             orig_pdb,
             mut_pdb,
             comparison_results,
+            function_results=function_results,
             custom_results_df=custom_results_df,
             custom_structure_ids=custom_structure_ids,
             pdb_results_df=pdb_results_df,
