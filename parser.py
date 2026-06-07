@@ -5,6 +5,7 @@ import os
 
 from Bio import SeqIO
 from Bio.Seq import Seq
+from Bio.Data import CodonTable
 from Bio.Align import PairwiseAligner
 
 def parse_args():
@@ -31,11 +32,11 @@ def parse_args():
 
     return parser.parse_args()
 
-
+# 1.1
 def read_fasta(path):
     """ 
-    reads first sequence
-    returns DNA always in upper string
+    reads given sequences
+    returns them always in upper string
     """
      
     record = next(SeqIO.parse(path, "fasta"))
@@ -43,47 +44,29 @@ def read_fasta(path):
 
     return sequence
 
-
-def find_orfs(sequence, translation_table=11, min_length=90):
+def read_txt(path):
     """
-    predicts ORF's
+    if changes_file provided
+    reads given file with written mutations
+    returns them in a list
     """
-    orfs = []
-    
-    for frame in range(3):
-        for start in range(frame, len(sequence)-2, 3):
-            codon = sequence[start:start + 3]
+    changes = []
 
-            try:
-                if Seq(codon).translate(table=translation_table) != "M":
-                    continue
-            except Exception:
-                continue
+    with open(path) as f:
+        for line in f:
+            line = line.strip()
 
-            for stop in range(start + 3, len(sequence) - 2, 3):
-                stop_codon = sequence[stop:stop + 3]
+            if line:
+                changes.append(line)
 
-                if stop_codon in {"TAA", "TAG", "TGA"}:
-                    length = stop + 3 - start
-
-                    if length >= min_length:
-                        orfs.append(
-                            {
-                                "start": start + 1,
-                                "end": stop + 3,
-                                "length": length
-                            }
-                        )
-                    break
-    return orfs
-                
-
+    return changes
+             
 def isit_orf(sequence, translation_table=11):
     """
     checks if given sequence is a valid ORF:
     first three letters are START codon
     last three letters are STOP codon
-    STOP codon appears in the middle
+    STOP codon does not appear in the middle
     length is divisible by three
 
     """
@@ -91,6 +74,17 @@ def isit_orf(sequence, translation_table=11):
 
     if len(seq) % 3 != 0:
         raise ValueError("Sequence length is not divisible by 3")
+    
+    table = CodonTable.unambiguous_dna_by_id[translation_table]
+
+    start_codons = table.start_codons
+    stop_codons = table.stop_codons
+
+    if sequence[:3] not in start_codons:
+        raise ValueError("Sequence does not start with valid start codon")
+    
+    if sequence[-3:] not in stop_codons:
+        raise ValueError("Sequence does not end with valid stop codon")
 
     try:
         protein = seq.translate(table=translation_table, cds=True)
@@ -98,221 +92,152 @@ def isit_orf(sequence, translation_table=11):
         raise ValueError(f"Sequence is not a valid coding sequence: {e}")
     
     return str(protein)
-
-
-def validate_modified_orf(sequence, translation_table=11):
-    pass
-
+###
 
 def automatic_alignment(original_seq, modified_seq):
     """
-    alignemnt of DNA sequences if user did not give their's
+    if chosen --auto-alignment
+    alignemnt of DNA sequences
+    returns changes in the same format as read_txt
+
+    needs normalization
     """
     aligner = PairwiseAligner()
 
+    aligner.mode = "global"
+
     alignment = aligner.align(original_seq, modified_seq)[0]
 
-    return alignment
+    aligned_original = alignment[0]
+    aligned_modified = alignment[1]
 
-
-def nucleotide_changes(original_seq, modified_seq):
-    """
-    finds nucleotide subsitutions 
-    """
     changes = []
+    seq_pos = 0
 
-    for pos, (nt1, nt2) in enumerate(
-        zip(original_seq, modified_seq), start=1):
-        if nt1 != nt2:
-            changes.append({
-                "position": pos,
-                "original": nt1,
-                "modified": nt2
-            })
+    for o, m in zip(aligned_original, aligned_modified):
+
+        if o != "-":
+            seq_pos += 1
+
+        # substitution
+        if o != "-" and m != "-" and o != m:
+            changes.append(str(seq_pos))
+
+        # deletion
+        elif m == "-" and o != "-":
+            changes.append(str(seq_pos))
+
+        # insertion
+        if o == "-" and m != "-":
+            changes.append(str(seq_pos))
 
     return changes
 
+def normalize_changes(changes):
+    """
+    merges overlapiing sequences from automatic_alignment into ranges
+    """
+    points = []
+
+    for c in changes:
+        if "-" in c:
+            start, end = map(int, c.split("-"))
+            points.extend(range(start, end + 1))
+        else:
+            points.append(int(c))
+
+    points = sorted(set(points))
+
+    if not points:
+        return []
+    
+    merged = []
+    start = prev = points[0]
+    
+    for p in points[1:]:
+        if p == prev + 1:
+            prev = p
+        else:
+            merged.append(str(start) if start == prev else f"{start}-{prev}")
+            start = prev = p
+        
+    merged.append(str(start) if start == prev else f"{start}-{prev}")
+
+    return merged
+
+# 1.2
+def validate_no_internal_stop(protein_sequence):
+    """
+    raises an error if codon STOP apperas inside the protein
+    """
+    if "*" in protein_sequence[:-1]:
+        raise ValueError("Internal stop codon detected - protein is non-functional")
 
 def compare_proteins(original, modified):
-    """ 
-    checks if aminoacids stay at their
-    original position 
     """
+    checks aminoacids differences
+    """
+    aligner = PairwiseAligner()
+    aligner.mode = "global"
+    alignment = aligner.align(original, modified)[0]
+
+    aligned_original = alignment[0]
+    aligned_modified = alignment[1]
 
     mutations = []
 
-    for pos, (aa1, aa2) in enumerate(
-        zip(original, modified), start=1):
-        
-        if aa1 != aa2:
-            mutation_type = ("nonsynonymous")
+    aa_position = 0
 
-            if aa2 == "*":
-                mutation_type = ("stop_gained")
-                
-            mutations.append(
-                {
-                    "position": pos,
-                    "original": aa1,
-                    "modified": aa2,
-                    "type": mutation_type
-                }
-            )
+    for aa1, aa2 in zip(aligned_original, aligned_modified):
 
+        if aa1 != "-":
+            aa_position += 1
+
+        if aa1 == aa2:
+            continue
+
+        if aa2 == "-":
+            mutation_type = "deletion"
+
+        else:
+            mutation_type = "nonsynonymous"
+
+        mutations.append(
+            {"position": aa_position,
+             "original": aa1,
+             "modified": aa2,
+             "type": mutation_type}
+        )
     return mutations
 
 
-def modified_analysis(  sequence,
-                        original_seq, 
-                        modified_seq,
-                        translation_table=11):
+def modified_analysis(
+        sequence, original_seq, modified_seq, translation_table=11):
     """
     detects:
-    stops in the middle of sequence
-    gained stops
-    frameshifts' consequences
     size changes
+    frameshifts' consequences
     """
     seq = Seq(sequence)
 
     diff = (len(modified_seq) - len(original_seq))
 
-    if diff == 0:
-        status = "same"
-    elif diff > 0:
-        status = "longer"
-    else:
-        status = "shorter"
+    frameshift = (diff % 3 != 0)
 
-    frameshift = ( diff % 3 != 0)
-
-    return str(seq.translate(table=translation_table)), status, frameshift
+    return str(seq.translate(table=translation_table)), frameshift
 
 
-def parse_changes_file(path):
-    """
-    reads mutation positions from user's file (-a)
-
-    accepts format:
-    8
-    28-32
-    150
-
-    returns a list of positions and/or ranges
-    """
-
-    changes = []
-
-    with open(path) as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-
-            if "-" in line:
-                start, end = map(int, line.split("-"))
-                changes.append(
-                    {
-                        "type": "range",
-                        "start": start,
-                        "end": end
-                    }
-                )
-
-            else:
-                changes.append(
-                    {
-                        "type": "single",
-                        "position": int(line)
-                    }
-                )
-
-    return changes
-
-
-# def indels_detection(alignment):
-#     """
-#     extracts insertions and deletions from PairwiseAligner output
-#     """
-#     aligned_orig, aligned_mod = alignment[0]
-
-#     indels = []
-
-#     for i, (o, m) in enumerate(zip(aligned_orig, aligned_mod), start=1):
-        
-#         if o == "-" and m != "-":
-#             indels.append({
-#                 "position": i,
-#                 "type": "insertion",
-#                 "base": m
-#             })
-
-#         elif m == "-" and o != "-":
-#             indels.append({
-#                 "position": i,
-#                 "type": "deletion",
-#                 "base": o
-#             })
-
-#     return indels
-
-
-# def apply_frameshift(sequence, indels):
-    #     """
-    #     applies indels to sequence and returns shifted sequence
-    #     """
-
-    #     seq = list(sequence)
-
-    #     shift = 0
-
-    #     for indel in sorted(indels, key=lambda x: x["position"]):
-    #         pos = indel["position"] + shift
-
-    #         if indel["type"] == "deletion":
-    #             if pos < len(seq):
-    #                 seq.pop(pos)
-    #                 shift -= 1
-
-    #         elif indel["type"] == "insertion":
-    #             seq.insert(pos, indel["base"])
-    #             shift += 1
-
-    #     return "".join(seq)
-
-
-
-# def translate_with_frameshift(sequence, table=11):
-#     """
-#     translates sequence after indel modifications
-#     """
-#     seq = Seq(sequence)
-#     return str(seq.translate(table=table))
-
-
-def report_file(
+def generate_input_summary(
         output_dir,
         mutations,
         original_protein,
         modified_protein,
-        length_status,
         frameshift,
-        internal_stop,
-        too_short,
-        nt_changes,
-        indels,
-        functional=True
+        nt_changes
         ):
     """
-    if directory doesn't exist, creates one: report
-    
-    name is always: changes_report.csv
-    
-    information to write:
-    where AMINOACIDS change
-    is protein same length
-    functional or has STOP in the middle
-    etc.
+    if directory doesn't exist, creates one: report 
+    name of file with report: changes_report.tsv
     """
     os.makedirs(output_dir, exist_ok=True)
 
@@ -320,138 +245,87 @@ def report_file(
         output_dir, "changes_report.tsv"
     )
 
-    same_length = (len(original_protein) == len(modified_protein))
-
     with open(report_path, "w") as report:
+        
+        report.write("SUMMARY\n")
 
-        # header
+        report.write(f"original_protein_length:\t"
+                     f"{len(original_protein)}\n")
+        
+        report.write(f"modified_protein_length:\t"
+                     f"{len(modified_protein)}\n")
+
+        report.write(f"frameshift:\t"
+                     f"{frameshift}\n\n")
+        
+
+        # aminoacid mutations
+        report.write("AMINO_ACID_CHANGES\n")
+
         report.write("aa_position\t"
                      "original_aa\t"
                      "modified_aa\t"
                      "mutation_type\n"
                      )
-        
-        # summary
-        report.write("\n")
-        report.write("SUMMARY\n")
 
-        report.write(f"Original protein length:\t"
-                     f"{len(original_protein)}\n")
-        report.write(f"modified_protein_length:\t"
-                     f"{len(modified_protein)}\n")
-        report.write(f"same_length\t"
-                     f"{same_length}\n")
-        report.write(f"length_status\t"
-                     f"{length_status}\n")
-        report.write(f"frameshift\t"
-                     f"{frameshift}\n")
-        report.write(f"internal_stop\t"
-                     f"{internal_stop}\n")
-        report.write(f"functional\t"
-                     f"{functional}\n")
-        report.write(f"protein_too_short\t"
-                     f"{too_short}\n")        
-
-        # frameshift simulation
-        # report.write("\nFRAMESHIFT_SIMULATION\n")
-        # report.write(f"shifted_protein_length\t{len(shifted_protein)}\n")
-        # report.write(f"frameshift_effect\t{frameshift_protein_diff}\n")
-
-        # mutations
         for mutation in mutations:
             report.write(
                 f"{mutation['position']}\t"
                 f"{mutation['original']}\t"
                 f"{mutation['modified']}\t"
-                f"{mutation['type']}\n"
+                f"{mutation['type']}\n\n"
             )
 
         # nucleotide changes
         report.write("\nNUCLEOTIDE_CHANGES\n")
-        report.write("position\toriginal_nt\tmodified_nt\n")
         
         for change in nt_changes:
             report.write(
-                f"{change['position']}\t"
-                f"{change['original']}\t"
-                f"{change['modified']}\n")
-            
-        # indels
-        report.write("\nINDELS\n")
-        report.write("position\ttype\tbase\n")
-        
-        for indel in indels:
-            report.write(
-                f"{indel['position']}\t"
-                f"{indel['type']}\t"
-                f"{indel['base']}\n")
+                f"{change}\n")
 
     return report_path
             
-
+# to main in cli
 def main():
     args = parse_args()
 
-    os.makedirs(args.output, exist_ok=True)
+    # original_seq = read_fasta(args.original_file)
+    # modified_seq = read_fasta(args.modified_file)
 
-    original_seq = read_fasta(args.original_file)
-    modified_seq = read_fasta(args.modified_file)
+    # original_protein = isit_orf(original_seq, args.table)
 
-    original_protein = isit_orf(original_seq, args.table)
-
-    modified_protein, length_status, frameshift = (modified_analysis(
-                                            modified_seq, original_seq, 
-                                            modified_seq, args.table
-                                            ))
-
-    mutations = compare_proteins(original_protein, modified_protein)
-
-    internal_stop = "*" in modified_protein[:-1]
-
-    too_short = len(modified_protein) < 20
-
-    functional = (not internal_stop
-                    and not frameshift
-                    and len(modified_protein) >= 20)
-
-
-    if args.auto_alignment:
-        alignment = automatic_alignment(original_seq, modified_seq)
-
-        nt_changes = nucleotide_changes(original_seq, modified_seq)
-
-        # indels = indels_detection(alignment)
-        # shifted_seq = apply_frameshift(original_seq, indels)
-        # shifted_protein = translate_with_frameshift(shifted_seq, args.table)
-
-        indels = []
-
-    elif args.changes_file:
-        nt_changes = parse_changes_file(args.changes_file)
-        indels = []
+    # modified_protein, frameshift = (
+    #     modified_analysis(
+    #         modified_seq, original_seq, modified_seq, args.table))
     
-    else:
-        raise ValueError("Provide -a for automatic alignment or your own file")
+    # validate_no_internal_stop(modified_protein)
 
-    report_file(
-        output_dir=args.output,
-        mutations=mutations,
-        original_protein=str(original_protein),
-        modified_protein=str(modified_protein),
-        length_status=length_status,
-        frameshift=frameshift,
-        internal_stop=internal_stop,
-        too_short=too_short,
-        nt_changes=nt_changes,
-        indels=indels, 
-        functional=functional
-    )
 
-    print("Original protein length:", len(original_protein))
-    print("Modified protein length:", len(modified_protein))
-    print("Length_status:", length_status)
-    print("Frameshift:", frameshift)
-    print("Internal stop:", internal_stop) 
+    # if args.auto_alignment:
+    #     nt_changes = normalize_changes(
+    #         automatic_alignment(
+    #             original_seq, modified_seq))
+        
+
+    # elif args.changes_file:
+    #     nt_changes = read_txt(args.changes_file)
+    
+    # else:
+    #     raise ValueError("Provide -a for automatic alignment or your own file")
+
+
+    # mutations = compare_proteins(original_protein, modified_protein)
+
+    # generate_input_summary(
+    #     output_dir=args.output,
+    #     mutations=mutations,
+    #     nt_changes=nt_changes,
+    #     original_protein=original_protein,
+    #     modified_protein=modified_protein,
+    #     frameshift=frameshift
+    # )
+
+    print("First part of analysis is finished")
 
 
 if __name__ == "__main__":
