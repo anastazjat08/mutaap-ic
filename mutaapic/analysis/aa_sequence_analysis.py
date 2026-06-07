@@ -2,6 +2,10 @@ from Bio.Align import PairwiseAligner
 from Bio.Seq import Seq
 
 
+'''
+This module is for analyzing amino acid sequences by aligning proteins and detecting modified sequence consequences.
+'''
+
 def compare_proteins(original, modified):
     """
     checks aminoacids differences
@@ -40,8 +44,7 @@ def compare_proteins(original, modified):
     return mutations
 
 
-def modified_analysis(
-        sequence, original_seq, modified_seq, translation_table=11):
+def modified_analysis(sequence, original_seq, modified_seq, translation_table):
     """
     detects:
     size changes

@@ -1,19 +1,32 @@
 from Bio import SeqIO
 
+from mutaapic.orf.validate_sequence import validate_nt_sequence
 
-def read_fasta(path):
+'''
+Module for reading FASTA and mutation text files
+'''
+
+def read_fasta(path:str) -> str:
     """ 
     reads given sequences
     returns them always in upper string
     """
      
-    record = next(SeqIO.parse(path, "fasta"))
+    parser = SeqIO.parse(path, "fasta")
+    try:
+        record = next(parser)
+    except StopIteration:
+        return None, "[ERROR] FASTA file is empty"
+
     sequence = str(record.seq).upper()
+
+    if not validate_nt_sequence(sequence):
+        return None, "[ERROR] Invalid characters in sequence"
 
     return sequence
 
 
-def read_txt(path):
+def read_txt(path:str) -> list:
     """
     if changes_file provided
     reads given file with written mutations
@@ -27,5 +40,7 @@ def read_txt(path):
 
             if line:
                 changes.append(line)
+    if len(changes) == 0:
+        print('[INFO] Text file with changes is empty.')
 
     return changes

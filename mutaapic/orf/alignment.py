@@ -1,9 +1,11 @@
 from Bio.Align import PairwiseAligner
 
+'''
+This module is for aligning DNA sequences automatically and finding change ranges.
+'''
 
-def automatic_alignment(original_seq, modified_seq):
+def automatic_alignment(original_seq, modified_seq) -> list:
     """
-    if chosen --auto-alignment
     alignemnt of DNA sequences
     returns changes in the same format as read_txt
 
@@ -40,7 +42,7 @@ def automatic_alignment(original_seq, modified_seq):
 
     return changes
 
-def normalize_changes(changes):
+def normalize_changes(changes: list) -> list:
     """
     merges overlapiing sequences from automatic_alignment into ranges
     """

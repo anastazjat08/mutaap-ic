@@ -10,39 +10,37 @@ import argparse as ap
 
 import mutaapic.structure.predict_structure as predict_structure
 import mutaapic.analysis.compare_structures as compare_structures
-import mutaapic.validation.validate_sequence as validate_sequence
+# import mutaapic.validation.validate_sequence as validate_sequence
 import mutaapic.utils.filesystem as filesystem
 import mutaapic.utils.foldseek as foldseek
 import mutaapic.utils.fetch as fetch
 import mutaapic.reporting.report as report
 
 from mutaapic.utils.read_files import read_fasta, read_txt
-from mutaapic.orf.validation import isit_orf, validate_no_internal_stop
+from mutaapic.orf.validate_sequence import isit_orf, validate_no_internal_stop
 from mutaapic.orf.alignment import automatic_alignment, normalize_changes
-from mutaapic.orf.protein_analysis import compare_proteins, modified_analysis
-from mutaapic.analysis.inputs_summary import generate_input_summary
+from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis
+from mutaapic.analysis.input_summary import generate_input_summary
 
 
 def main():
     parser = ap.ArgumentParser(description="MutAAP-IC: A tool for predicting and analyzing the effects of mutations on protein structure.")
-    # parser.add_argument("fasta_orig", type=str, help="The FASTA file containing the original nucleotide sequence to analyze.")
-    parser.add_argument("original_file", 
-                        help="FASTA file with original ORF - DNA sequence")
-    # parser.add_argument("fasta_mut", type=str, help="The FASTA file containing the mutated nucleotide sequence to analyze.")
-    parser.add_argument("modified_file", 
-                        help="FASTA file with modified ORF - DNA sequence")
+
+    parser.add_argument("original_fasta", help="FASTA file containing the original nucleotide sequence to analyze.")
+    parser.add_argument("modified_fasta", help="FASTA file containing the mutated nucleotide sequence to analyze.")
+
     parser.add_argument("changes_file", nargs="?", default=None,
-                        help="user-provided modifications in given ORF, format should be:" \
+                        help="Text file with user-provided ORF modifications. Expected format:" \
                         "one change in one line, eg.:\n" \
                         "8\n" \
                         "28-32")    
-    parser.add_argument("--auto-alignment", action="store_true",
-                        help="do automatic alignment")
-    parser.add_argument("--output", default="report", 
-                        help="output directory")
-    parser.add_argument("--table", type=int, default=11, 
-                        help="NCBI translation code table, default is bacterial")
-    parser.add_argument("--db_path", type=str, default="./mutaap_db", help="Path where the default Foldseek databases are stored and downloaded if missing.")
+    
+    # parser.add_argument("--auto-alignment", action="store_true", help="do automatic alignment") # DO WYWALENIA
+    # parser.add_argument("--output", default="report", help="output directory") # DO WYWALENIAA
+
+    parser.add_argument("--table", type=int, default=1, help="NCBI translation code table, default NCBI Table 1.")
+
+    parser.add_argument("--db_path", type=str, default="./mutaap_db", help="Path where the default Foldseek databases are stored and downloaded if missing (default: mutaap_db).")
     parser.add_argument("--custom_db", type=str, help="Path to a custom database of structures for comparison (optional).")
     parser.add_argument("--exclude_pdb", action="store_true", help="Whether to exclude comparison with structures from PDB DB supported by Foldseek (default: False).")
     parser.add_argument("--exclude_af", action="store_true", help="Whether to exclude comparison with structures from Alphafold DB supported by Foldseek (default: False).")
@@ -83,34 +81,23 @@ def main():
     db_root = _resolve_db_root(args.db_path)
 
     # ================= SEQUENCE EXTRACTION AND VALIDATION =================
-    # HERE PAULA'S PART WITH SEQUENCE EXTRACTION FROM FASTA FILES AND ORF ANALYSIS, PARSERS
-    # I wrote simple validation functions in validate_sequence.py - use here, the remove from predict_structure.py
-
-
-    orig_dna = read_fasta(args.original_file)
-    mut_dna = read_fasta(args.modified_file)
+    orig_dna = read_fasta(args.original_fasta)
+    mut_dna = read_fasta(args.modified_fasta)
 
     orig_sequence = isit_orf(orig_dna, args.table)
 
-    mut_sequence, frameshift = (
-        modified_analysis(
-            mut_dna, orig_dna, mut_dna, args.table))
-    
+    mut_sequence, frameshift = modified_analysis(mut_dna, orig_dna, mut_dna, args.table)
     validate_no_internal_stop(mut_sequence)
 
 
-    if args.auto_alignment:
-        nt_changes = normalize_changes(
-            automatic_alignment(
-                orig_dna, mut_dna))
-        
+    # if args.auto_alignment:
+    #     nt_changes = normalize_changes(automatic_alignment(orig_dna, mut_dna))
 
+    if args.changes_file is None:
+        print("[INFO] No changes file provided. Running automatic mutation detection.")
+        nt_changes = normalize_changes(automatic_alignment(orig_dna, mut_dna))
     elif args.changes_file:
         nt_changes = read_txt(args.changes_file)
-    
-    else:
-        raise ValueError("Provide --auto-alignment for automatic alignment or your own file")
-
     mutations = compare_proteins(orig_sequence, mut_sequence)
 
     generate_input_summary(
@@ -130,6 +117,7 @@ def main():
     
     orig_for_esm = clean_for_esm(orig_sequence)
     mut_for_esm = clean_for_esm(mut_sequence)
+    
 
     # ================= STRUCTURE PREDICTION =================
     orig_pdb = predict_structure.predictESM('orig', orig_for_esm, args.out_dir)

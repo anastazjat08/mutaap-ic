@@ -1,5 +1,10 @@
 import os
 
+'''
+This module provides functions for generating a TSV summary report
+of protein and nucleotide changes from given mutation data.
+'''
+
 def generate_input_summary(
         output_dir,
         mutations,
