@@ -1,26 +1,29 @@
-import requests
+"""The main CLI entry point for MutAAP-IC, orchestrating the workflow of sequence validation,
+structure prediction, structure comparison, functional prediction,
+and report generation based on user-provided input files and parameters."""
+
 import os
-import re
 import time
-import shutil
-import subprocess
-import tempfile
-import pandas as pd
 import argparse as ap
 
 import mutaapic.structure.predict_structure as predict_structure
+
 import mutaapic.analysis.compare_structures as compare_structures
+from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis, merge_adjacent_aa_changes
+from mutaapic.analysis.input_summary import generate_input_summary
+
 import mutaapic.utils.filesystem as filesystem
 import mutaapic.utils.foldseek as foldseek
 import mutaapic.utils.fetch as fetch
+from mutaapic.utils.read_files import read_fasta, read_txt
+
 import mutaapic.reporting.report as report
+
 from mutaapic.function.predict_function import predict_function, compare_function
 
-from mutaapic.utils.read_files import read_fasta, read_txt
 from mutaapic.orf.validate_sequence import isit_orf, validate_no_internal_stop
-from mutaapic.orf.alignment import automatic_alignment, extract_nt_mismatches, merge_adjacent_changes
-from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis, merge_adjacent_aa_changes
-from mutaapic.analysis.input_summary import generate_input_summary
+from mutaapic.orf.alignment import automatic_alignment, merge_adjacent_changes
+
 
 
 def main():
@@ -36,9 +39,6 @@ def main():
                         "28-32\n" \
                         "40\tA\tG\tmismatch\n" \
                         "53-55\tAGGCTT\t------\tdeletion")
-    
-    # parser.add_argument("--auto-alignment", action="store_true", help="do automatic alignment") # DO WYWALENIA
-    # parser.add_argument("--output", default="report", help="output directory") # DO WYWALENIAA
 
     parser.add_argument("--table", type=int, default=1, help="NCBI translation code table, default NCBI Table 1.")
 
@@ -91,10 +91,6 @@ def main():
 
     mut_sequence, frameshift = modified_analysis(orig_dna, mut_dna, args.table)
     validate_no_internal_stop(mut_sequence)
-
-
-    # if args.auto_alignment:
-    #     nt_changes = normalize_changes(automatic_alignment(orig_dna, mut_dna))
 
     if args.changes_file is None:
         print("[INFO] No changes file provided. Running automatic mutation detection.")

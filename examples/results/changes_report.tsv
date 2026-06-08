@@ -1,0 +1,13 @@
+SUMMARY
+original_protein_length:	111
+modified_protein_length:	112
+frameshift:	False
+
+AMINO_ACID_CHANGES
+aa_position_in_mut	original_aa	modified_aa	mutation_type
+112	-	F	nonsynonymous
+
+
+NUCLEOTIDE_CHANGES
+nt_position_in_mut	original_nt	modified_nt	change_type
+335-337	---	TTT	insertion
