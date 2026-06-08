@@ -5,14 +5,14 @@ import json
 import pandas as pd
 
 
-def _df_to_html(df):
+def _df_to_html(df) -> str:
     try:
         return df.to_html(index=False, classes='dataframe')
     except Exception:
         return f"<pre>{str(df)}</pre>"
 
 
-def _interpret_structure_change(comparison_results):
+def _interpret_structure_change(comparison_results) -> str:
     tm_score = comparison_results.get("tm_score")
     rmsd = comparison_results.get("rmsd")
 
@@ -84,17 +84,56 @@ def _interpret_structure_change(comparison_results):
     )
 
 
+def _function_df_to_html(df, title="GO Term Comparison") -> str:
+    if df is None or df.empty:
+        return f"<h3>{html.escape(title)}</h3><p>No results.</p>"
+
+    STATUS_STYLE = {
+        "lost":      "background:#ffd6d6;color:#900",
+        "gained":    "background:#d6f5d6;color:#060",
+        "conserved": "background:#f0f0f0;color:#444",
+    }
+
+    rows_html = ""
+    for _, row in df.iterrows():
+        style = STATUS_STYLE.get(row["status"], "")
+        rows_html += (
+            f"<tr style='{style}'>"
+            f"<td>{html.escape(str(row['GO_term']))}</td>"
+            f"<td>{html.escape(str(row['description']))}</td>"
+            f"<td style='text-align:center'>{'✓' if row['in_orig'] else '✗'}</td>"
+            f"<td style='text-align:center'>{'✓' if row['in_mut'] else '✗'}</td>"
+            f"<td style='text-align:center;font-weight:bold'>{html.escape(str(row['status']))}</td>"
+            f"</tr>"
+        )
+
+    return f"""
+    <h3>{html.escape(title)}</h3>
+    <table class='dataframe'>
+        <thead>
+            <tr>
+                <th>GO Term</th><th>Description</th>
+                <th>WT</th><th>Mutant</th><th>Status</th>
+            </tr>
+        </thead>
+        <tbody>{rows_html}</tbody>
+    </table>
+    """
+
+
 def generate_report(out_dir: str,
                     orig_pdb: str,
                     mut_pdb: str,
                     comparison_results: dict,
+                    function_results: dict[str, pd.DataFrame] = None,
                     custom_results_df=None,
                     custom_structure_ids=None,
                     pdb_results_df=None,
                     af_results_df=None,
                     custom_downloads=None,
                     pdb_downloads=None,
-                    af_downloads=None):
+                    af_downloads=None,
+                    ) -> str:
     """Generate a simple HTML report summarizing the analysis results.
 
     The report will be written to `out_dir/report/report.html` and will include
@@ -105,7 +144,7 @@ def generate_report(out_dir: str,
     os.makedirs(report_dir, exist_ok=True)
 
     # Copy PDBs into report folder for convenient linking
-    def _copy_to_report(path):
+    def _copy_to_report(path) -> str | None:
         if not path:
             return None
         try:
@@ -120,7 +159,7 @@ def generate_report(out_dir: str,
     mut_link = _copy_to_report(mut_pdb)
 
     # Read PDB text to embed in the HTML so the report works under file://
-    def _read_text_for(path, link):
+    def _read_text_for(path, link) -> str | None:
         # Prefer original path; fall back to copied file in report dir
         if path and os.path.exists(path):
             try:
@@ -228,7 +267,7 @@ def generate_report(out_dir: str,
     )
     parts.append(script)
 
-    def _add_search_section(title, df, downloads):
+    def _add_search_section(title, df, downloads) -> None:
         parts.append(f"<h2>{title}</h2>")
         if df is None or (hasattr(df, 'empty') and df.empty):
             parts.append("<p>No results.</p>")
@@ -246,6 +285,44 @@ def generate_report(out_dir: str,
         parts.append("</ul>")
     _add_search_section("PDB Foldseek Results", pdb_results_df, pdb_downloads)
     _add_search_section("AlphaFold Foldseek Results", af_results_df, af_downloads)
+
+
+    parts.append("<h2>Functional Annotation (InterProScan)</h2>")
+
+    if function_results is None:
+        parts.append(
+            "<p>Functional annotation was not run or failed. "
+            "Ensure <code>--email</code> is provided and EBI InterProScan is reachable.</p>"
+        )
+    else:
+        ontology_names = {
+            "mf": "Molecular Function (MF)",
+            "bp": "Biological Process (BP)",
+            "cc": "Cellular Component (CC)",
+        }
+
+        # Summary badge counts
+        for key, name in ontology_names.items():
+            df = function_results.get(key)
+            if df is None or df.empty:
+                parts.append(f"<h3>{name}</h3><p>No results.</p>")
+                continue
+
+            n_lost    = (df["status"] == "lost").sum()
+            n_gained  = (df["status"] == "gained").sum()
+            n_conserved = (df["status"] == "conserved").sum()
+
+            parts.append(
+                f"<p style='margin-bottom:4px'>"
+                f"<span style='background:#ffd6d6;color:#900;padding:2px 8px;border-radius:4px;margin-right:6px'>"
+                f"Lost: {n_lost}</span>"
+                f"<span style='background:#d6f5d6;color:#060;padding:2px 8px;border-radius:4px;margin-right:6px'>"
+                f"Gained: {n_gained}</span>"
+                f"<span style='background:#f0f0f0;color:#444;padding:2px 8px;border-radius:4px'>"
+                f"Conserved: {n_conserved}</span>"
+                f"</p>"
+            )
+            parts.append(_function_df_to_html(df, title=name))
 
     parts.append("</body></html>")
 
