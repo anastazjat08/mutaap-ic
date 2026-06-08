@@ -1,4 +1,5 @@
 import os
+from typing import Any
 
 '''
 This module provides functions for generating a TSV summary report
@@ -6,13 +7,13 @@ of protein and nucleotide changes from given mutation data.
 '''
 
 def generate_input_summary(
-        output_dir,
-        mutations,
-        original_protein,
-        modified_protein,
-        frameshift,
-        nt_changes
-        ):
+        output_dir: str,
+        mutations: list[dict[str, Any]],
+        original_protein: str,
+        modified_protein: str,
+        frameshift: bool,
+        nt_changes: list[str],
+        ) -> str:
     """
     if directory doesn't exist, creates one: report 
     name of file with report: changes_report.tsv
@@ -40,7 +41,7 @@ def generate_input_summary(
         # aminoacid mutations
         report.write("AMINO_ACID_CHANGES\n")
 
-        report.write("aa_position\t"
+        report.write("aa_position_in_mut\t"
                      "original_aa\t"
                      "modified_aa\t"
                      "mutation_type\n"
@@ -56,9 +57,14 @@ def generate_input_summary(
 
         # nucleotide changes
         report.write("\nNUCLEOTIDE_CHANGES\n")
-        
+        report.write("nt_position_in_mut\t"
+                     "original_nt\t"
+                     "modified_nt\t"
+                     "change_type\n"
+                     )
         for change in nt_changes:
             report.write(
                 f"{change}\n")
 
     return report_path
+  

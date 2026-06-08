@@ -42,7 +42,7 @@ def isit_orf(sequence: str, translation_table: int) -> str:
     return str(protein)
 
 
-def validate_no_internal_stop(protein_sequence: str):
+def validate_no_internal_stop(protein_sequence: str) -> None:
     """
     raises an error if codon STOP apperas inside the protein
     """

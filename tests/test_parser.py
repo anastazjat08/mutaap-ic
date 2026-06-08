@@ -1,12 +1,7 @@
 import pytest
 
-from parser import(
-    isit_orf,
-    normalize_changes,
-    validate_no_internal_stop,
-    compare_proteins,
-    modified_analysis
-)
+from mutaapic.orf.validate_sequence import isit_orf, validate_no_internal_stop
+from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis, merge_adjacent_aa_changes
 
 def test_isit_orf_valid():
     """
@@ -15,29 +10,25 @@ def test_isit_orf_valid():
     M K
     """
     seq = "ATGAAATAA"
-    protein = isit_orf(seq)
+    protein = isit_orf(seq, 1)
     assert protein == "MK"
 
 def test_isit_orf_no_start():
     seq = "AAAAAATAA"
 
     with pytest.raises(ValueError):
-        isit_orf(seq)
+        isit_orf(seq, 1)
 
 def test_isit_orf_no_stop():
     seq = "ATGAAAAAA"
 
     with pytest.raises(ValueError):
-        isit_orf(seq)
+        isit_orf(seq, 1)
 
 def test_isit_orf_internal_stop():
     seq = "ATGAAATAATAA"
     with pytest.raises(ValueError):
-        isit_orf(seq)
-
-def test_normalize_changes():
-    changes = ["1", "4", "5", "6"]
-    assert normalize_changes(changes) == ["1", "4-6"]
+        isit_orf(seq, 1)
 
 def test_validate_no_internal_stop_ok():
     validate_no_internal_stop("MKLQ")
@@ -46,12 +37,21 @@ def test_validate_no_internal_stop_error():
     with pytest.raises(ValueError):
         validate_no_internal_stop("MK*LQ")
 
-def test_compare_proteins_one_change():
-    mutations = compare_proteins("MKT", "MRT")
-    assert len(mutations) == 1
-    assert mutations[0]["position"] == 2   
-    assert mutations[0]["original"] == "K"
-    assert mutations[0]["modified"] == "R"
+def test_compare_proteins():
+
+    result = compare_proteins(
+        "MAAAA",
+        "MAVAA"
+    )
+
+    assert result == [
+        {
+            "position": 3,
+            "original": "A",
+            "modified": "V",
+            "type": "nonsynonymous"
+        }
+    ]
 
 def test_modified_analysis_no_frameshift():
     protein, frameshift = modified_analysis(
@@ -70,3 +70,31 @@ def test_modified_analysis_frameshift():
     )
 
     assert frameshift is True
+
+def test_merge_adjacent_aa_changes():
+
+    mutations = [
+        {
+            "position": 5,
+            "original": "A",
+            "modified": "V",
+            "type": "nonsynonymous"
+        },
+        {
+            "position": 6,
+            "original": "T",
+            "modified": "G",
+            "type": "nonsynonymous"
+        }
+    ]
+
+    result = merge_adjacent_aa_changes(mutations)
+
+    assert result == [
+        {
+            "position": "5-6",
+            "original": "AT",
+            "modified": "VG",
+            "type": "nonsynonymous"
+        }
+    ]

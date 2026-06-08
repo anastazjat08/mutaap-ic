@@ -10,7 +10,6 @@ import argparse as ap
 
 import mutaapic.structure.predict_structure as predict_structure
 import mutaapic.analysis.compare_structures as compare_structures
-# import mutaapic.validation.validate_sequence as validate_sequence
 import mutaapic.utils.filesystem as filesystem
 import mutaapic.utils.foldseek as foldseek
 import mutaapic.utils.fetch as fetch
@@ -18,8 +17,8 @@ import mutaapic.reporting.report as report
 
 from mutaapic.utils.read_files import read_fasta, read_txt
 from mutaapic.orf.validate_sequence import isit_orf, validate_no_internal_stop
-from mutaapic.orf.alignment import automatic_alignment, normalize_changes
-from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis
+from mutaapic.orf.alignment import automatic_alignment, extract_nt_mismatches, merge_adjacent_changes
+from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis, merge_adjacent_aa_changes
 from mutaapic.analysis.input_summary import generate_input_summary
 
 
@@ -33,7 +32,9 @@ def main():
                         help="Text file with user-provided ORF modifications. Expected format:" \
                         "one change in one line, eg.:\n" \
                         "8\n" \
-                        "28-32")    
+                        "28-32\n" \
+                        "40\tA\tG\tmismatch\n" \
+                        "53-55\tAGGCTT\t------\tdeletion")
     
     # parser.add_argument("--auto-alignment", action="store_true", help="do automatic alignment") # DO WYWALENIA
     # parser.add_argument("--output", default="report", help="output directory") # DO WYWALENIAA
@@ -86,7 +87,7 @@ def main():
 
     orig_sequence = isit_orf(orig_dna, args.table)
 
-    mut_sequence, frameshift = modified_analysis(mut_dna, orig_dna, mut_dna, args.table)
+    mut_sequence, frameshift = modified_analysis(orig_dna, mut_dna, args.table)
     validate_no_internal_stop(mut_sequence)
 
 
@@ -95,11 +96,14 @@ def main():
 
     if args.changes_file is None:
         print("[INFO] No changes file provided. Running automatic mutation detection.")
-        nt_changes = normalize_changes(automatic_alignment(orig_dna, mut_dna))
+        nt_changes = merge_adjacent_changes(automatic_alignment(orig_dna, mut_dna))
     elif args.changes_file:
         nt_changes = read_txt(args.changes_file)
-    mutations = compare_proteins(orig_sequence, mut_sequence)
+    mutations = merge_adjacent_aa_changes(compare_proteins(orig_sequence, mut_sequence))
 
+    print(orig_sequence)
+    print(mut_sequence)
+    
     generate_input_summary(
         output_dir=args.out_dir,
         mutations=mutations,

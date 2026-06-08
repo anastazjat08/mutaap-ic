@@ -1,6 +1,6 @@
 import pytest
 
-from parser import read_fasta, read_txt
+from mutaapic.utils.read_files import read_fasta, read_txt
 
 def test_read_fasta(tmp_path):
     fasta = tmp_path / "test.fasta"
