@@ -47,6 +47,16 @@ This installs the CLI command:
 mutaap --help
 ```
 
+## Input format
+```
+The input should be provided in a FASTA file
+Needs to be an ORF:
+- start with START codon
+- end with STOP codon
+- be divisible by 3
+- does not have STOP codons inside
+```
+
 ## Quick usage example
 
 ```
