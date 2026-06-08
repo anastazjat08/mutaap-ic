@@ -10,20 +10,39 @@ import argparse as ap
 
 import mutaapic.structure.predict_structure as predict_structure
 import mutaapic.analysis.compare_structures as compare_structures
-import mutaapic.validation.validate_sequence as validate_sequence
 import mutaapic.utils.filesystem as filesystem
 import mutaapic.utils.foldseek as foldseek
 import mutaapic.utils.fetch as fetch
 import mutaapic.reporting.report as report
 from mutaapic.function.predict_function import predict_function, compare_function
 
+from mutaapic.utils.read_files import read_fasta, read_txt
+from mutaapic.orf.validate_sequence import isit_orf, validate_no_internal_stop
+from mutaapic.orf.alignment import automatic_alignment, extract_nt_mismatches, merge_adjacent_changes
+from mutaapic.analysis.aa_sequence_analysis import compare_proteins, modified_analysis, merge_adjacent_aa_changes
+from mutaapic.analysis.input_summary import generate_input_summary
 
 
 def main():
     parser = ap.ArgumentParser(description="MutAAP-IC: A tool for predicting and analyzing the effects of mutations on protein structure.")
-    # parser.add_argument("fasta_orig", type=str, help="The FASTA file containing the original nucleotide sequence to analyze.")
-    # parser.add_argument("fasta_mut", type=str, help="The FASTA file containing the mutated nucleotide sequence to analyze.")
-    parser.add_argument("--db_path", type=str, default="./mutaap_db", help="Path where the default Foldseek databases are stored and downloaded if missing.")
+
+    parser.add_argument("original_fasta", help="FASTA file containing the original nucleotide sequence to analyze.")
+    parser.add_argument("modified_fasta", help="FASTA file containing the mutated nucleotide sequence to analyze.")
+
+    parser.add_argument("changes_file", nargs="?", default=None,
+                        help="Text file with user-provided ORF modifications. Expected format:" \
+                        "one change in one line, eg.:\n" \
+                        "8\n" \
+                        "28-32\n" \
+                        "40\tA\tG\tmismatch\n" \
+                        "53-55\tAGGCTT\t------\tdeletion")
+    
+    # parser.add_argument("--auto-alignment", action="store_true", help="do automatic alignment") # DO WYWALENIA
+    # parser.add_argument("--output", default="report", help="output directory") # DO WYWALENIAA
+
+    parser.add_argument("--table", type=int, default=1, help="NCBI translation code table, default NCBI Table 1.")
+
+    parser.add_argument("--db_path", type=str, default="./mutaap_db", help="Path where the default Foldseek databases are stored and downloaded if missing (default: mutaap_db).")
     parser.add_argument("--custom_db", type=str, help="Path to a custom database of structures for comparison (optional).")
     parser.add_argument("--exclude_pdb", action="store_true", help="Whether to exclude comparison with structures from PDB DB supported by Foldseek (default: False).")
     parser.add_argument("--exclude_af", action="store_true", help="Whether to exclude comparison with structures from Alphafold DB supported by Foldseek (default: False).")
@@ -65,19 +84,51 @@ def main():
     db_root = _resolve_db_root(args.db_path)
 
     # ================= SEQUENCE EXTRACTION AND VALIDATION =================
-    # HERE PAULA'S PART WITH SEQUENCE EXTRACTION FROM FASTA FILES AND ORF ANALYSIS, PARSERS
-    # I wrote simple validation functions in validate_sequence.py - use here, the remove from predict_structure.py
+    orig_dna = read_fasta(args.original_fasta)
+    mut_dna = read_fasta(args.modified_fasta)
+
+    orig_sequence = isit_orf(orig_dna, args.table)
+
+    mut_sequence, frameshift = modified_analysis(orig_dna, mut_dna, args.table)
+    validate_no_internal_stop(mut_sequence)
 
 
-    # I assume we have sequences extracted as strings at this point, e.g.:
-    orig_sequence = "KVFGRCELAAAMKRHGLDNYRGYSLGNWVHAAKFESNFNTYKTNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNYTRSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL"
-    mut_sequence = "KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL"
+    # if args.auto_alignment:
+    #     nt_changes = normalize_changes(automatic_alignment(orig_dna, mut_dna))
 
+    if args.changes_file is None:
+        print("[INFO] No changes file provided. Running automatic mutation detection.")
+        nt_changes = merge_adjacent_changes(automatic_alignment(orig_dna, mut_dna))
+    elif args.changes_file:
+        nt_changes = read_txt(args.changes_file)
+    mutations = merge_adjacent_aa_changes(compare_proteins(orig_sequence, mut_sequence))
+
+    print(orig_sequence)
+    print(mut_sequence)
+    
+    generate_input_summary(
+        output_dir=args.out_dir,
+        mutations=mutations,
+        nt_changes=nt_changes,
+        original_protein=orig_sequence,
+        modified_protein=mut_sequence,
+        frameshift=frameshift
+    )
+
+    def clean_for_esm(protein):
+        """
+        removes stop codon from the end
+        """
+        return protein[:-1] if protein.endswith("*") else protein
+    
+    orig_for_esm = clean_for_esm(orig_sequence)
+    mut_for_esm = clean_for_esm(mut_sequence)
+    
 
     # ================= STRUCTURE PREDICTION =================
-    orig_pdb = predict_structure.predictESM('orig', orig_sequence, args.out_dir)
+    orig_pdb = predict_structure.predictESM('orig', orig_for_esm, args.out_dir)
     time.sleep(5)
-    mut_pdb = predict_structure.predictESM('mut', mut_sequence, args.out_dir)
+    mut_pdb = predict_structure.predictESM('mut', mut_for_esm, args.out_dir)
 
     # ================= STRUCTURE COMPARISON =================
     comparison_results = compare_structures.compare_structures(orig_pdb, mut_pdb)
