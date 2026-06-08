@@ -2,6 +2,8 @@ import requests
 import os
 import time
 
+"""Functions for predicting protein structure using ESMFold."""
+
 def predictESM(version: str, sequence: str, out_dir: str) -> str:
     '''Predicts the structure of a protein sequence using ESMFold and saves the predicted structure as a PDB file.
     Parameters
@@ -51,10 +53,3 @@ def predictESM(version: str, sequence: str, out_dir: str) -> str:
 
     print(f"[ERROR] Failed to predict structure for {version} after {max_retries} attempts.")
     return None
-
-
- # TEST
-# test_seq = "MKTAYIAKQRQISFVKSHFSRQDILDLIYQYARVVYQ"
-# output_file = "/home/nastka/ADP/mutaap_test/predicted_structure.pdb"
-
-# predicted_pdb = predictESM('orig', test_seq, "/home/nastka/ADP/mutaap_test")

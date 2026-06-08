@@ -166,36 +166,3 @@ def foldseek_search_db(query_pdb: str, db_path: str, k: int = 10):
         structure_ids = df_top["target"].tolist()
 
         return df_top, structure_ids
-
-
-
-
-
-# TESTS
-# comp_2_structures = compare_structures("/home/nastka/ADP/mutaap_test/pdb_structures/1JXU.pdb", "/home/nastka/ADP/mutaap_test/pdb_structures/1JXX.pdb")
-# print(comp_2_structures)
-
-# create_own_db("/home/nastka/ADP/mutaap_test/pdb_structures", "/home/nastka/ADP/mutaap_test/test_db/pdb_db")
-# sup_db = create_supported_foldseek_db("PDB", "/home/nastka/ADP/mutaap_test/test_db", "pdb_db")
-# print(sup_db)
-# df_results, structure_ids = foldseek_search_db("/home/nastka/ADP/mutaap_test/1CRN.pdb", "/home/nastka/ADP/mutaap_test/test_db/pdb_db")
-# print(df_results)
-# print(structure_ids)
-
-# sup_db = create_supported_foldseek_db(
-#     "Alphafold/Proteome",
-#     "/home/nastka/ADP/mutaap_test/alfa_test_db",
-#     "alfa_db"
-# )
-# print(sup_db)
-# df_results, structure_ids = foldseek_search_db("/home/nastka/mutaap/mutaap_test/1CRN.pdb", sup_db)
-# print(df_results)
-# print(structure_ids)
-
-# pdb_list = ['1crn-assembly1_A', '4fc1-assembly1_A', '1ejg-assembly1_A', '1ab1-assembly1_A', '3nir-assembly1_A', '2fd7-assembly1_A', '2fd9-assembly1_A', '2v9b-assembly1_B', '1okh-assembly1_A', '1wuw-assembly1_A']
-# af_list = ['AF-Q5Z4W6-F1-model_v6', 'AF-A0A0P0WX99-F1-model_v6', 'AF-Q8VZK8-F1-model_v6', 'AF-Q9C8D6-F1-model_v6', 'AF-Q42597-F1-model_v6', 'AF-Q6ZL66-F1-model_v6', 'AF-O25097-F1-model_v6', 'AF-Q42596-F1-model_v6', 'AF-A0A1C1CIK4-F1-model_v6', 'AF-A0A0J9YTU8-F1-model_v6']
-
-# # pdb_downloads = download_pdb_structures(pdb_list, "/home/nastka/mutaap/mutaap_test/pdb_structures")
-# # print(pdb_downloads)
-# af_downloads = download_alfaphold_structures(af_list, "/home/nastka/mutaap/mutaap_test/af_structures")
-# print(af_downloads)

@@ -1,8 +1,9 @@
 import requests
 import time
-import json
 from typing import Optional
 import pandas as pd
+
+"""Functions for predicting protein function using InterProScan."""
 
 IPRSCAN_BASE = "https://www.ebi.ac.uk/Tools/services/rest/iprscan5"
 POLL_INTERVAL = 15  # seconds

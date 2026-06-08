@@ -57,7 +57,7 @@ def modified_analysis(
 
     frameshift = (diff % 3 != 0)
 
-    return str(Seq(modified_seq).translate(table=translation_table)), frameshift
+    return str(Seq(modified_seq).translate(table=translation_table, cds=True)), frameshift
 
 def merge_adjacent_aa_changes(mutations: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """

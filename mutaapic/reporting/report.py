@@ -4,6 +4,8 @@ import html
 import json
 import pandas as pd
 
+"""Functions for generating an HTML report summarizing the analysis results,
+ including structure comparison and functional annotation."""
 
 def _df_to_html(df) -> str:
     try:

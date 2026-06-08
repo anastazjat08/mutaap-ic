@@ -1,7 +1,6 @@
 import os
 import subprocess
 import shutil
-import tempfile
 
 '''Utility functions for handling Foldseek databases, including checking for existing databases,
 and creating new databases.'''

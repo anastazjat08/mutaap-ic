@@ -1,6 +1,5 @@
 import pytest
-from unittest.mock import patch, MagicMock
-import pandas as pd
+from unittest.mock import patch
 import mutaapic.analysis.compare_structures as cs
 
 

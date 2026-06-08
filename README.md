@@ -10,6 +10,7 @@ MutAAP-IC (_Mutational Amino Acid Position - Impact Check_) is a Python package 
 - [Installation](#installation)
   - [Requirements](#requirements)
   - [Steps](#step-1---clone-the-repository)
+- [Input format](#input-format)
 - [Quick usage example](#quick-usage-example)
 - [Repository structure](#repository-structure)
 
@@ -41,14 +42,13 @@ pip install .
 This installs the CLI command:
 `mutaap`
 
-### Step 4 - Test he installation
+### Step 4 - Test the installation
 
 ```
 mutaap --help
 ```
 
 ## Input format
-```
 The input nucleotide sequence should be provided in a FASTA file.
 Needs to be an ORF:
 - start with START codon
@@ -56,60 +56,78 @@ Needs to be an ORF:
 - be divisible by 3
 - does not have STOP codons inside
 - will give maximum of 400 amino acid length 
-```
 
-## Quick usage example
+
+
+## Quick usage examples
 
 ```
+mutaap orig_fasta_path mut_fasta_path
+
+
 mutaap orig_fasta_path mut_fasta_path \
-      --own_db own_structures_folder \
+      --custom_db custom_structures_folder \
       --exclude_af \
       --top_k 20 \
+      --table 11
       --out_dir all_results_path
+
+
+
 ```
 
 ## Repository structure
-TBU
 
 ```
-mutaap-ic/
-└── mutaap-ic/
-    ├── examples/                     # Example input files and usage workflows
-    │   └── .gitkeep
-    ├── images/                       # Project images (e.g., logo for README)
-    │   └── logo.png
-    ├── mutaapic/                     # Main Python package
-    │   ├── analysis/                 # Structural analysis modules
-    │   │   ├── __init__.py
-    │   │   └── compare_structures.py # Foldseek/TM-align logic for structure comparison
-    │   ├── io/                       # Input/output utilities (future expansion???)
-    │   │   ├── __init__.py
-    │   │   └── .gitkeep
-    │   ├── orf/                      # ORF detection and sequence-level mutation logic
-    │   │   ├── __init__.py
-    │   │   └── gitkeep
-    │   ├── reporting/                # Report generation (tables, summaries, visual outputs)
-    │   │   ├── __init.py
-    │   │   └── .gitkeep
-    │   ├── structure/                # Structure prediction and handling
-    │   │   ├── __init__.py
-    │   │   └── predict_structure.py  # ESMFold prediction wrapper
-    │   ├── utils/                    # General-purpose helper functions
-    │   │   ├── __init__.py
-    │   │   ├── fetch.py              # Downloading/fetching external structures
-    │   │   ├── filesystem.py         # Path handling, directory management
-    │   │   └── foldseek.py           # Foldseek database creation and search wrappers
-    │   ├── validation/               # Input validation and sanity checks
-    │   │   ├── __init__.py
-    │   │   └── validate_sequence.py  # Sequence validation logic
-    │   ├── __init__.py               
-    │   └── cli.py                    # Command-line interface (`mutaap` entry point)
-    ├── tests/                        # Unit tests for package modules
-    │   └── .gitkeep
-    ├── environment.yaml              # Conda environment specification
-    ├── LICENSE                       # License information
-    ├── pyproject.toml                # Build system, dependencies, package metadata
-    └── README.md                     # Project documentation
+
+├── .gitignore
+├── LICENSE                           # License information
+├── Mutaap-ic.pdf                     # Project presentation
+├── README.md                         # Project documentation
+├── environment.yaml                  # Conda environment specification
+├── examples                          # Example input and output files
+├── images
+│   └── logo.png                      # project logo
+├── mutaapic                          # Main Python package
+│   ├── __init__.py
+│   ├── analysis                      # Structural analysis modules
+│   │   ├── __init__.py
+│   │   ├── aa_sequence_analysis.py
+│   │   ├── compare_structures.py
+│   │   └── input_summary.py
+│   ├── cli.py                        # Command-line interface (`mutaap` entry point)
+│   ├── function                      # Protein function module
+|   |   ├── __init__.py
+│   │   └── predict_function.py       
+│   ├── orf                           # Module for validation input sequences
+│   │   ├── __init__.py
+│   │   ├── alignment.py
+│   │   └── validate_sequence.py
+│   ├── reporting                     # Module for reporting
+│   │   ├── __init.py
+│   │   └── report.py
+│   ├── structure                     # Structure prediction module
+│   │   ├── __init__.py
+│   │   └── predict_structure.py
+│   └── utils                         # General-purpose helper functions
+│       ├── fetch.py                  # Downloading/fetching external structures
+│       ├── filesystem.py             # Path handling, directory management
+│       ├── foldseek.py               # Foldseek database creation and search wrappers
+│       └── read_files.py             # Module for reading FASTA files
+├── pyproject.toml                    # Build system, dependencies, package metadata
+└── tests                             # Unit tests for package modules
+    ├── conftest.py
+    ├── test_alignment.py
+    ├── test_cli.py
+    ├── test_compare_structures.py
+    ├── test_files.py
+    ├── test_filesystem.py
+    ├── test_foldseek.py
+    ├── test_foldseek_search_db.py
+    ├── test_input_summary.py
+    ├── test_parser.py
+    ├── test_predict_structure.py
+    └── test_report.py
 
 
 ```
